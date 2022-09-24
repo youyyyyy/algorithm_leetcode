@@ -2,9 +2,12 @@ package leetcode_linked_list;
 
 import fcc_code_example_recursion.ListNode;
 
-// Time complexity : O(max(m,n))
-// Space complexity : O(max(m,n))
-class Solution02 {
+/*
+Time complexity : O(max(m,n))
+Space complexity : O(max(m,n))
+*/
+
+class Solution0002 {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         // 1. build a new linked list, will return pre.next
         ListNode pre = new ListNode();
@@ -37,7 +40,7 @@ class Solution02 {
     }
 }
 
-public class _02_AddTwoNumbers {
+public class _0002_AddTwoNumbers {
     public static void main(String[] args) {
         ListNode n1 = new ListNode(9);
         ListNode n2 = new ListNode(9);
@@ -64,7 +67,7 @@ public class _02_AddTwoNumbers {
         n3_2.setNext(n4_2);
 
 
-        Solution02 slt = new Solution02();
+        Solution0002 slt = new Solution0002();
         ListNode res = slt.addTwoNumbers(n1, n1_2);
         printLinkedList(res);
 

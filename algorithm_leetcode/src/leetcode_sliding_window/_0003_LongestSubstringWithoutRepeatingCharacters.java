@@ -1,8 +1,7 @@
 package leetcode_sliding_window;
 
-// Time complexity: O(n)
-// Space complexity: O(m)
-class Solution03 {
+
+class Solution0003 {
     public int lengthOfLongestSubstring(String s) {
         int len = s.length();
         if (len == 0 || len == 1) return len;
@@ -11,7 +10,8 @@ class Solution03 {
         int[] chars = new int[128];
         int left = 0;
         int right = 0;
-        int maxLen = Integer.MIN_VALUE;
+        int maxLen = 1;
+
         for (; right < len; right++) {
             // 2. extends window using "right" pointer
             chars[s.charAt(right)]++;
@@ -29,9 +29,9 @@ class Solution03 {
     }
 }
 
-public class _03_LongestSubstringWithoutRepeatingCharacters {
+public class _0003_LongestSubstringWithoutRepeatingCharacters {
     public static void main(String[] args) {
-        Solution03 slt = new Solution03();
+        Solution0003 slt = new Solution0003();
         String s = "pwwkew";
         int res = slt.lengthOfLongestSubstring(s);
         System.out.println(res);
