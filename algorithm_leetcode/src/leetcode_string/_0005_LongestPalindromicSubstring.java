@@ -1,10 +1,16 @@
 package leetcode_string;
 
-class Solution05 {
+/*
+ * Time complexity: O(n^2)
+ * Space complexity: O(1)
+ * */
+
+class Solution0005 {
     public String longestPalindrome(String s) {
         if (s.length() == 1) return s;
 
         int start = 0, end = 0;
+
         for (int i = 0; i < s.length(); i++) {
 
             // 1. a palindrome could be odd or even
@@ -32,9 +38,9 @@ class Solution05 {
     }
 }
 
-public class _05_LongestPalindromicSubstring {
+public class _0005_LongestPalindromicSubstring {
     public static void main(String[] args) {
-        Solution05 slt = new Solution05();
+        Solution0005 slt = new Solution0005();
         String s = "cbbd";
         String res = slt.longestPalindrome(s);
         System.out.println(res);

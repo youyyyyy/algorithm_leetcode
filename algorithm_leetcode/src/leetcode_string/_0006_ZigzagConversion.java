@@ -5,7 +5,7 @@ import java.util.List;
 
 // Time complexity: O(n)
 // Space complexity: O(n)
-class Solution06 {
+class Solution0006 {
     public String convert(String s, int numRows) {
         if (numRows == 1) return s;
 
@@ -15,7 +15,7 @@ class Solution06 {
         }
 
         int i = 0;
-        int order = -1;
+        int order = -1; // descending at first
         for (char c : s.toCharArray()) {
             rows.get(i).append(c);
             if (i == 0 || i == numRows - 1) order = -order;
@@ -30,9 +30,9 @@ class Solution06 {
     }
 }
 
-public class _06_ZigzagConversion {
+public class _0006_ZigzagConversion {
     public static void main(String[] args) {
-        Solution06 slt = new Solution06();
+        Solution0006 slt = new Solution0006();
         String s = "PAYPALISHIRING";
         int numRows = 3;
         String res = slt.convert(s, numRows);
