@@ -2,19 +2,26 @@ package leetcode_linked_list;
 
 import fcc_code_example_recursion.ListNode;
 
-class Solution876 {
+
+/*
+ * Time complexity: O(n)
+ * Space complexity: O(1)
+ * */
+
+class Solution0876 {
     public ListNode middleNode(ListNode head) {
         ListNode fast = head;
         ListNode slow = head;
-        while (fast.next != null && fast.next.next != null) {
+
+        while (fast != null && fast.next != null) {
             fast = fast.next.next;
             slow = slow.next;
         }
-        return fast.next == null ? slow : slow.next;
+        return slow;
     }
 }
 
-public class _876_MiddleLinkedList {
+public class _0876_MiddleLinkedList {
 
     public static void main(String[] args) {
         ListNode n1 = new ListNode(1);
@@ -30,7 +37,7 @@ public class _876_MiddleLinkedList {
         n4.setNext(n5);
         n5.setNext(n6);
 
-        Solution876 slt = new Solution876();
+        Solution0876 slt = new Solution0876();
         ListNode res = slt.middleNode(n1);
         System.out.println(res.val);
 
