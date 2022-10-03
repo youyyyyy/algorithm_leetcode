@@ -2,7 +2,7 @@ package leetcode_two_pointers;
 
 // Time complexity: O(n)
 // Space complexity: O(n)
-class Solution977 {
+class Solution0977 {
     public int[] sortedSquares(int[] nums) {
         int len = nums.length;
         int[] res = new int[len];
@@ -25,10 +25,10 @@ class Solution977 {
 }
 
 
-public class _977_SquaresSortedArray {
+public class _0977_SquaresSortedArray {
     public static void main(String[] args) {
         int[] arr = {-4, -1, 0, 3, 10};
-        Solution977 slt = new Solution977();
+        Solution0977 slt = new Solution0977();
         int[] res = slt.sortedSquares(arr);
 
         for (int i : res) {

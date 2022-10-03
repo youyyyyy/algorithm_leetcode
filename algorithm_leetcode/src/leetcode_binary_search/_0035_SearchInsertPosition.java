@@ -2,9 +2,9 @@ package leetcode_binary_search;
 
 
 /*
-* Time complexity: O(logN)
-* Space complexity: O(1)
-* */
+ * Time complexity: O(logN)
+ * Space complexity: O(1)
+ * */
 
 class Solution0035 {
     public int searchInsert(int[] nums, int target) {
@@ -12,8 +12,11 @@ class Solution0035 {
 
         while (lo <= hi) {
             int mid = lo + (hi - lo) / 2;
-            if (nums[mid] < target) lo = mid + 1;
-            else hi = mid - 1;
+
+            // nums contains distinct values sorted in ascending order, if found, return mid
+            if (nums[mid] == target) return mid;
+            else if (nums[mid] > target) hi = mid - 1;
+            else lo = mid + 1;
         }
 
         return lo;
