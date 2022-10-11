@@ -6,18 +6,17 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
 
-
-
 /*
+
 Recursive:
-class Solution0144 {
-    public List<Integer> preorderTraversal(TreeNode root) {
+class Solution0094 {
+    public List<Integer> inorderTraversal(TreeNode root) {
         List<Integer> res = new ArrayList<>();
         if (root == null) return res;
 
+        res.addAll(inorderTraversal(root.left));
         res.add(root.val);
-        res.addAll(preorderTraversal(root.left));
-        res.addAll(preorderTraversal(root.right));
+        res.addAll(inorderTraversal(root.right));
 
         return res;
     }
@@ -25,30 +24,27 @@ class Solution0144 {
 */
 
 
-/*
-* Iterative:
-* Time complexity: O(n)
-* Space complexity: O(n)
-* */
-class Solution0144 {
-    public List<Integer> preorderTraversal(TreeNode root) { // top -> left -> right
+class Solution0094 {
+    public List<Integer> inorderTraversal(TreeNode root) {
         List<Integer> res = new ArrayList<>();
         if (root == null) return res;
 
         Stack<TreeNode> stack = new Stack<>();
-        stack.push(root);
-        while (!stack.isEmpty()) {  // while(!stack.empty())
-            TreeNode temp = stack.pop();
-            res.add(temp.val);
-            if (temp.right != null) stack.push(temp.right);
-            if (temp.left != null) stack.push(temp.left);
+        while (!stack.isEmpty() || root != null) {
+            if (root != null) {
+                stack.push(root);
+                root = root.left;
+            } else {
+                root = stack.pop();
+                res.add(root.val);
+                root = root.right;
+            }
         }
-
         return res;
     }
 }
 
-public class _0144_BinaryTreePreorderTraversal {
+public class _0094_BinaryTreeInorderTraversal {
     public static void main(String[] args) {
         TreeNode root = new TreeNode(1);
         TreeNode t2 = new TreeNode(2);
@@ -65,8 +61,8 @@ public class _0144_BinaryTreePreorderTraversal {
         t3.left = t6;
         t3.right = t7;
 
-        Solution0144 slt = new Solution0144();
-        List<Integer> res = slt.preorderTraversal(root);
-        System.out.println(res); // [1, 2, 4, 5, 3, 6, 7]
+        Solution0094 slt = new Solution0094();
+        List<Integer> res = slt.inorderTraversal(root);
+        System.out.println(res); // [4, 2, 5, 1, 6, 3, 7]
     }
 }

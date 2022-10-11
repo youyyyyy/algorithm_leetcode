@@ -1,5 +1,10 @@
 package leetcode_greedy;
 
+
+/*
+* Time complexity: O(n)
+* Space complexity: O(1)
+* */
 class Solution0860 {
     public boolean lemonadeChange(int[] bills) {
         int five = 0, ten = 0;
