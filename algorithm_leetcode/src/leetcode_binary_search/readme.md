@@ -18,3 +18,15 @@
 |      |                                                              |            |
 |      |                                                              |            |
 
+
+
+### 3. Rotated Sorted Array
+
+| No.  | Problem                                                      | Difficulty |
+| ---- | ------------------------------------------------------------ | ---------- |
+| 0033 | [Search in Rotated Sorted Array](https://leetcode.com/problems/search-in-rotated-sorted-array/) | Medium     |
+| 0081 | [Search in Rotated Sorted Array II](https://leetcode.com/problems/search-in-rotated-sorted-array-ii/) | Medium     |
+|      |                                                              |            |
+
+
+

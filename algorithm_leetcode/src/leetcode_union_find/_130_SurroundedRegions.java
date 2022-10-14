@@ -88,7 +88,7 @@ class Solution130 {
 
 public class _130_SurroundedRegions {
     public static void main(String[] args) {
-        char[][] board = {{'O', 'O', 'O' }, {'O', 'O', 'O' }, {'O', 'O', 'O' }};
+        char[][] board = {{'O', 'O', 'O'}, {'O', 'O', 'O'}, {'O', 'O', 'O'}};
         Solution130 slt = new Solution130();
         slt.solve(board);
         for (int i = 0; i < board.length; i++) {

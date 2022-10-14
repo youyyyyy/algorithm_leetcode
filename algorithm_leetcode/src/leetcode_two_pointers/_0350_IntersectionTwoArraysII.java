@@ -1,39 +1,37 @@
 package leetcode_two_pointers;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 
 
 class Solution350 {
     public int[] intersect(int[] nums1, int[] nums2) {
-        if (nums1 == null || nums1.length == 0 || nums2 == null || nums2.length == 0) return new int[0];
-        int i = 0, j = 0;
-        ArrayList<Integer> al = new ArrayList<>();
+
         Arrays.sort(nums1);
         Arrays.sort(nums2);
+
+        int[] res = new int[Math.min(nums1.length, nums2.length)];
+        int i = 0, j = 0, k = 0;
         while (i < nums1.length && j < nums2.length) {
-            if (nums1[i] == nums2[j]) {
-                al.add(nums1[i]);
+            int num1 = nums1[i];
+            int num2 = nums2[j];
+            if (num1 == num2) {
+                res[k++] = nums1[i];
                 i++;
                 j++;
-            } else if (nums1[i] < nums2[j]) {
+            } else if (num1 < num2) {
                 i++;
             } else {
                 j++;
             }
         }
-        int[] res = new int[al.size()];
-        for (i = 0; i < res.length; i++) {
-            res[i] = al.get(i);
-        }
-        return res;
+
+        return Arrays.copyOfRange(res, 0, k);
     }
 
 }
 
 
-
-public class _350_IntersectionTwoArraysII {
+public class _0350_IntersectionTwoArraysII {
     public static void main(String[] args) {
         int[] arr1 = {4, 9, 5};
         int[] arr2 = {9, 4, 9, 8, 4};

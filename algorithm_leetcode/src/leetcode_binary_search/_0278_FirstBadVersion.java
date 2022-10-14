@@ -11,7 +11,7 @@ class VersionControl {
  * Time complexity: O(logN)
  * Space complexity: O(1)
  * */
-class Solution extends VersionControl {
+class Solution0278 extends VersionControl {
     public int firstBadVersion(int n) {
         int lo = 1, hi = n;
 
