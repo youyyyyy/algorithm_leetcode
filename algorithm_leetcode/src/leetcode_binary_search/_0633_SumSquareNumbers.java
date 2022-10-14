@@ -2,7 +2,7 @@ package leetcode_binary_search;
 
 class Solution0633 {
     public boolean judgeSquareSum(int c) {
-        
+
         int left = 0, right = (int) Math.sqrt(c);
         while (left <= right) {
             int temp1 = left * left;
