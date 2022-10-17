@@ -1,23 +1,10 @@
-/*
-*  | mergeTwoLists(22,null) |  ---> return list1(22->40)
-*  | mergeTwoLists(22,20)   |  ---> return list2(20->22->40)
-*  | mergeTwoLists(22,16)   |  ---> return list2(16->20->22->40)
-*  | mergeTwoLists(22,11)   |  ---> return list2(11->16->20->22->40)
-*  | mergeTwoLists(8,11)    |  ---> return list1(8->11->16->20->22->40)
-*  | mergeTwoLists(8,4)     |  ---> return list2(4->8->11->16->20->22->40)
-*  | mergeTwoLists(1,4)     |  ---> return list1(1->4->8->11->16->20>22->40)
-*
-* */
-
-
 package leetcode_recursion;
 
 import fcc_code_example_recursion.ListNode;
 
-
 // time complexity: O(m+n)
 // space complexity: O(m+n)
-class Solution21 {
+class Solution0021 {
     public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
         // base case
         if (list1 == null) return list2;
@@ -33,7 +20,7 @@ class Solution21 {
     }
 }
 
-public class _21_MergeTwoSortedLists {
+public class _0021_MergeTwoSortedLists {
 
     public static void main(String[] args) {
         ListNode n1 = new ListNode(1);
@@ -54,7 +41,7 @@ public class _21_MergeTwoSortedLists {
         n2_2.setNext(n3_2);
         n3_2.setNext(n4_2);
 
-        Solution21 slt = new Solution21();
+        Solution0021 slt = new Solution0021();
         ListNode res = slt.mergeTwoLists(n1, n1_2);
         printLinkedList(res);
     }
