@@ -4,7 +4,7 @@ import fcc_code_example_recursion.ListNode;
 
 // Time complexity: O(n)
 // Space complexity: O(1)
-class Solution141 {
+class Solution0141 {
     public boolean hasCycle(ListNode head) {
         if (head == null || head.next == null) return false;
 
@@ -19,5 +19,5 @@ class Solution141 {
     }
 }
 
-public class _141_LinkedListCycle {
+public class _0141_LinkedListCycle {
 }

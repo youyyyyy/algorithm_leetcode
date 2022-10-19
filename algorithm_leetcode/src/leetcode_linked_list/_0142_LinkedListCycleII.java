@@ -2,27 +2,52 @@ package leetcode_linked_list;
 
 import fcc_code_example_recursion.ListNode;
 
-class Solution142 {
+
+
 /*
-    Time complexity: O(N)
-    Space complexity: O(N)
+Solution 1: HashSet
+Time complexity: O(N)
+Space complexity: O(N)
+
+class Solution0142 {
+
     public ListNode detectCycle(ListNode head) {
         HashSet<ListNode> visited = new HashSet<>();
         while (head != null) {
-            if(visited.contains(head)) return head;
+            if (visited.contains(head)) return head;
             visited.add(head);
             head = head.next;
         }
 
         return null;
     }
+}
  */
 
+/*
+Time complexity: O(N)
+Space complexity: O(1)
+*/
 
-    // Time complexity: O(N)
-    // Space complexity: O(1)
+class Solution0142 {
     public ListNode detectCycle(ListNode head) {
-        if (head == null || head.next == null) return null;
+
+        ListNode slow = hasCycle(head);
+
+        if (hasCycle(slow) == null) {
+            return null;
+        }
+        else {
+            ListNode fast = head;
+            while(slow != fast) {
+                slow = slow.next;
+                fast = fast.next;
+            }
+            return slow;
+        }
+    }
+
+    private ListNode hasCycle(ListNode head) {
 
         ListNode fast = head;
         ListNode slow = head;
@@ -30,22 +55,14 @@ class Solution142 {
         while (fast != null && fast.next != null) {
             fast = fast.next.next;
             slow = slow.next;
-            if (slow == fast) break;
+            if (slow == fast) return slow;
         }
 
-        if (fast != null && fast.next != null) {
-            fast = head;
-            while (fast != slow) {
-                fast = fast.next;
-                slow = slow.next;
-            }
-            return slow;
-        }
         return null;
     }
 }
 
-public class _142_LinkedListCycleII {
+public class _0142_LinkedListCycleII {
     public static void main(String[] args) {
         ListNode n1 = new ListNode(3);
         ListNode n2 = new ListNode(2);
@@ -57,7 +74,7 @@ public class _142_LinkedListCycleII {
         n3.setNext(n4);
         n4.setNext(n2);
 
-        Solution142 slt = new Solution142();
+        Solution0142 slt = new Solution0142();
         ListNode res = slt.detectCycle(n1);
         printLinkedList(res);
     }
