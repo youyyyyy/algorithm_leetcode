@@ -1,10 +1,9 @@
 package leetcode_string;
 
-
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
+/*
 class Solution2273 {
     public List<String> removeAnagrams(String[] words) {
 
@@ -20,6 +19,37 @@ class Solution2273 {
             }
         }
         return list;
+    }
+}*/
+
+
+class Solution2273 {
+    public List<String> removeAnagrams(String[] words) {
+
+        List<String> res = new ArrayList<>();
+
+        String prev = "";
+        for (int i = 0; i < words.length; i++) {
+            if (!isAnagram(prev, words[i])) {
+                res.add(words[i]);
+                prev = words[i];
+            }
+        }
+
+        return res;
+    }
+
+    private boolean isAnagram(String s, String t) {
+        if (s.length() != t.length()) return false;
+
+        int[] occurrence = new int[26];
+        for (int i = 0; i < s.length(); i++) {
+            occurrence[s.charAt(i) - 'a']++;
+            occurrence[t.charAt(i) - 'a']--;
+        }
+
+        for (int i : occurrence) if (i != 0) return false;
+        return true;
     }
 }
 
