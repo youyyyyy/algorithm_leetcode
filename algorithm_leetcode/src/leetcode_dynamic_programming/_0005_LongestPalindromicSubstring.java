@@ -1,4 +1,4 @@
-package leetcode_sliding_window;
+package leetcode_dynamic_programming;
 
 /*
  * Time complexity: O(n^2)

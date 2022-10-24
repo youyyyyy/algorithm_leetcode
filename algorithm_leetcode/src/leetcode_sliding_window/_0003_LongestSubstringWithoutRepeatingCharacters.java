@@ -3,24 +3,19 @@ package leetcode_sliding_window;
 
 class Solution0003 {
     public int lengthOfLongestSubstring(String s) {
-        int len = s.length();
-        if (len == 0 || len == 1) return len;
 
         // 1. s only consists of English letters, digits, symbols and spaces
+        int maxLen = 0;
         int[] chars = new int[128];
-        int left = 0;
-        int right = 0;
-        int maxLen = 1;
+        int left = 0, right = 0;
 
-        for (; right < len; right++) {
+        for (; right < s.length(); right++) {
+            char ch = s.charAt(right);
             // 2. extends window using "right" pointer
-            chars[s.charAt(right)]++;
+            chars[ch]++;
 
             // 3. if there is duplicate in the window, narrow window using "left" pointer
-            while (chars[s.charAt(right)] > 1) {
-                chars[s.charAt(left)]--;
-                left++;
-            }
+            while (chars[ch] > 1) chars[s.charAt(left++)]--;
 
             // 4. store the max value
             maxLen = Math.max((maxLen), right - left + 1);

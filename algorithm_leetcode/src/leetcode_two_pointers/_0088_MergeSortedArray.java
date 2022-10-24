@@ -2,7 +2,7 @@ package leetcode_two_pointers;
 
 // Time complexity: O(M+N)
 // Space complexity: O(1)
-class Solution88 {
+class Solution0088 {
     public void merge(int[] nums1, int m, int[] nums2, int n) {
         if (n == 0) return;
 
@@ -19,13 +19,13 @@ class Solution88 {
     }
 }
 
-public class _88_MergeSortedArray {
+public class _0088_MergeSortedArray {
     public static void main(String[] args) {
         int[] arr1 = {2, 0};
         int[] arr2 = {1};
         int m = 1;
         int n = 1;
-        Solution88 slt = new Solution88();
+        Solution0088 slt = new Solution0088();
         slt.merge(arr1, m, arr2, n);
     }
 
