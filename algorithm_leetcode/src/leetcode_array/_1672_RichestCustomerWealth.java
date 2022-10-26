@@ -5,20 +5,18 @@ package leetcode_array;
 // Space complexity: O(1)
 class Solution1672 {
     public int maximumWealth(int[][] accounts) {
-        int max = 0;
+        int res = 0;
 
-
-        for (int i = 0; i < accounts.length; i++) {
+        for (int[] account : accounts) {
             int sum = 0;
-            for (int j = 0; j < accounts[i].length; j++) {
-                sum += accounts[i][j];
-            }
-            max = Math.max(max, sum);
+            for (int money : account) sum += money;
+            res = Math.max(res, sum);
         }
 
-        return max;
+        return res;
     }
 }
+
 
 public class _1672_RichestCustomerWealth {
     public static void main(String[] args) {

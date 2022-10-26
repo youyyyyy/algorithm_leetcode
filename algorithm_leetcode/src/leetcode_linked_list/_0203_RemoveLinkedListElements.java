@@ -10,18 +10,17 @@ class Solution203 {
 
         ListNode dummy = new ListNode(-1, head);
         ListNode cur = dummy;
+
         while (cur.next != null) {
-            if (cur.next.val == val) {
-                cur.next = cur.next.next;
-            } else {
-                cur = cur.next;
-            }
+            if (cur.next.val == val) cur.next = cur.next.next;
+            else cur = cur.next;
         }
+
         return dummy.next;
     }
 }
 
-public class _203_RemoveLinkedListElements {
+public class _0203_RemoveLinkedListElements {
     public static void main(String[] args) {
         ListNode n1 = new ListNode(1);
         ListNode n2 = new ListNode(1);
