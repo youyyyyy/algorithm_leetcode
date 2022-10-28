@@ -2,17 +2,17 @@ package leetcode_tree;
 
 import fcc_code_example_recursion.TreeNode;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
+import java.util.*;
+
 
 /*
-class Solution0102 {
-    public List<List<Integer>> levelOrder(TreeNode root) {
+DFS:
+class Solution {
+    public List<List<Integer>> levelOrderBottom(TreeNode root) {
         List<List<Integer>> res = new ArrayList<>();
         if (root == null) return res;
         dfs(root, 0, res);
+        Collections.reverse(res);
         return res;
     }
 
@@ -22,36 +22,38 @@ class Solution0102 {
 
         if (root.left != null) dfs(root.left, level + 1, res);
         if (root.right != null) dfs(root.right, level + 1, res);
+
     }
 }
+
 */
 
-class Solution0102 {
-    public List<List<Integer>> levelOrder(TreeNode root) {
+
+class Solution0107 {
+    public List<List<Integer>> levelOrderBottom(TreeNode root) {
         List<List<Integer>> res = new ArrayList<>();
         if (root == null) return res;
 
         Queue<TreeNode> queue = new LinkedList<>();
         queue.add(root);
-
         while (!queue.isEmpty()) {
-            // number of elements in each level
-            int count = queue.size();
-            List<Integer> level = new ArrayList<>();
-            for (int i = 0; i < count; i++) {
+            List<Integer> curLevel = new ArrayList<>();
+            int len = queue.size();
+            for (int i = 0; i < len; i++) {
                 TreeNode temp = queue.poll();
-                level.add(temp.val);
+                curLevel.add(temp.val);
                 if (temp.left != null) queue.add(temp.left);
                 if (temp.right != null) queue.add(temp.right);
             }
-            res.add(level);
+            res.add(curLevel);
         }
 
+        Collections.reverse(res);
         return res;
     }
 }
 
-public class _0102_BinaryTreeLevelOrderTraversal {
+public class _0107_BinaryTreeLevelOrderTraversalII {
     public static void main(String[] args) {
         TreeNode root = new TreeNode(3);
         TreeNode t1 = new TreeNode(9);
@@ -64,8 +66,8 @@ public class _0102_BinaryTreeLevelOrderTraversal {
         root.right.left = t3;
         root.right.right = t4;
 
-        Solution0102 slt = new Solution0102();
-        List<List<Integer>> res = slt.levelOrder(root);
+        Solution0107 slt = new Solution0107();
+        List<List<Integer>> res = slt.levelOrderBottom(root);
         System.out.println(res);
     }
 }

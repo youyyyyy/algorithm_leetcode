@@ -26,12 +26,12 @@ class Solution0144 {
 
 
 /*
-* Iterative:
-* Time complexity: O(n)
-* Space complexity: O(n)
-* */
+ * Iterative:
+ * Time complexity: O(n)
+ * Space complexity: O(n)
+ * */
 class Solution0144 {
-    public List<Integer> preorderTraversal(TreeNode root) { // top -> left -> right
+    public List<Integer> preorderTraversal(TreeNode root) { // node -> left -> right
         List<Integer> res = new ArrayList<>();
         if (root == null) return res;
 
@@ -55,18 +55,14 @@ public class _0144_BinaryTreePreorderTraversal {
         TreeNode t3 = new TreeNode(3);
         TreeNode t4 = new TreeNode(4);
         TreeNode t5 = new TreeNode(5);
-        TreeNode t6 = new TreeNode(6);
-        TreeNode t7 = new TreeNode(7);
 
         root.left = t2;
+        root.left.left = t4;
+        root.left.right = t5;
         root.right = t3;
-        t2.left = t4;
-        t2.right = t5;
-        t3.left = t6;
-        t3.right = t7;
 
         Solution0144 slt = new Solution0144();
         List<Integer> res = slt.preorderTraversal(root);
-        System.out.println(res); // [1, 2, 4, 5, 3, 6, 7]
+        System.out.println(res); // [1, 2, 4, 5, 3]
     }
 }

@@ -29,7 +29,7 @@ class Solution0145 {
  * Space complexity: O(n)
  * */
 class Solution0145 {
-    public List<Integer> postorderTraversal(TreeNode root) {  // left -> right -> head
+    public List<Integer> postorderTraversal(TreeNode root) {  // left -> right -> node
 
         List<Integer> res = new ArrayList<>();
         if (root == null) return res;
@@ -58,18 +58,14 @@ public class _0145_BinaryTreePostorderTraversal {
         TreeNode t3 = new TreeNode(3);
         TreeNode t4 = new TreeNode(4);
         TreeNode t5 = new TreeNode(5);
-        TreeNode t6 = new TreeNode(6);
-        TreeNode t7 = new TreeNode(7);
 
         root.left = t2;
+        root.left.left = t4;
+        root.left.right = t5;
         root.right = t3;
-        t2.left = t4;
-        t2.right = t5;
-        t3.left = t6;
-        t3.right = t7;
 
         Solution0145 slt = new Solution0145();
         List<Integer> res = slt.postorderTraversal(root);
-        System.out.println(res); // [4, 5, 2, 6, 7, 3, 1]
+        System.out.println(res); // [4, 5, 2, 3, 1]
     }
 }

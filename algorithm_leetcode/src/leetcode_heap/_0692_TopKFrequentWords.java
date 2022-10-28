@@ -1,20 +1,27 @@
 package leetcode_heap;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.PriorityQueue;
+import java.util.*;
 
+/*
+* Time complexity: O(nlogk)
+* Space complexity: O(n)
+* */
 class Solution0692 {
     public List<String> topKFrequent(String[] words, int k) {
 
         List<String> res = new ArrayList<>();
 
         HashMap<String, Integer> map = new HashMap<>();
-        PriorityQueue<String> pq = new PriorityQueue<>((a, b) -> map.get(a) != map.get(b) ? map.get(b) - map.get(a) : a.compareTo(b));
         for (String word : words) map.put(word, map.getOrDefault(word, 0) + 1);
-        for (String key : map.keySet()) pq.add(key);
-        for (int i = 0; i < k; i++) res.add(pq.poll());
+
+        PriorityQueue<String> pq = new PriorityQueue<>((a, b) -> map.get(a) != map.get(b) ? map.get(a) - map.get(b) : b.compareTo(a));
+        for (String key : map.keySet()) { // only keep k elements sorted in heap
+            pq.add(key);
+            if (pq.size() > k) pq.poll();
+        }
+
+        while (!pq.isEmpty()) res.add(pq.poll());
+        Collections.reverse(res);
 
         return res;
     }
