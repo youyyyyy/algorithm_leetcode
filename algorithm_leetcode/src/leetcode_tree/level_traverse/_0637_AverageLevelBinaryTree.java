@@ -1,4 +1,4 @@
-package leetcode_tree;
+package leetcode_tree.level_traverse;
 
 import fcc_code_example_recursion.TreeNode;
 
@@ -6,6 +6,36 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
+
+/*
+DFS:
+class Solution0637 {
+    public List<Double> averageOfLevels(TreeNode root) {
+        List<Double> res = new ArrayList<>();
+        List<Integer> count = new ArrayList<>();
+
+        dfs(root, 0, res, count);
+        for (int i = 0; i < res.size(); i++) res.set(i, res.get(i) / count.get(i));
+
+        return res;
+    }
+
+    private void dfs(TreeNode root, int level, List<Double> res, List<Integer> count) {
+        if (root == null) return;
+
+        if (res.size() == level) {
+            res.add(root.val * 1.0);
+            count.add(1);
+        } else {
+            res.set(level, res.get(level) + root.val);
+            count.set(level, count.get(level) + 1);
+        }
+
+        dfs(root.left, level + 1, res, count);
+        dfs(root.right, level + 1, res, count);
+    }
+}
+*/
 
 class Solution0637 {
     public List<Double> averageOfLevels(TreeNode root) {

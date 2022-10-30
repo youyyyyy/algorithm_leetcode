@@ -1,59 +1,66 @@
-package leetcode_tree;
+package leetcode_tree.level_traverse;
 
 import fcc_code_example_recursion.TreeNode;
 
-import java.util.*;
-
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
 
 /*
 DFS:
-class Solution {
-    public List<List<Integer>> levelOrderBottom(TreeNode root) {
+class Solution0103 {
+    public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
         List<List<Integer>> res = new ArrayList<>();
         if (root == null) return res;
+
         dfs(root, 0, res);
-        Collections.reverse(res);
+
         return res;
     }
 
     private void dfs(TreeNode root, int level, List<List<Integer>> res) {
+        if (root == null) return;
         if (res.size() == level) res.add(new ArrayList<>());
-        res.get(level).add(root.val);
+        if (level % 2 == 0) res.get(level).add(root.val);
+        else res.get(level).add(0, root.val);
 
-        if (root.left != null) dfs(root.left, level + 1, res);
-        if (root.right != null) dfs(root.right, level + 1, res);
-
+        dfs(root.left, level + 1, res);
+        dfs(root.right, level + 1, res);
     }
+
 }
 
 */
 
-
-class Solution0107 {
-    public List<List<Integer>> levelOrderBottom(TreeNode root) {
+class Solution0103 {
+    public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
         List<List<Integer>> res = new ArrayList<>();
         if (root == null) return res;
 
         Queue<TreeNode> queue = new LinkedList<>();
         queue.add(root);
+
         while (!queue.isEmpty()) {
-            List<Integer> curLevel = new ArrayList<>();
             int len = queue.size();
+            List<Integer> curLevel = new ArrayList<>();
             for (int i = 0; i < len; i++) {
                 TreeNode temp = queue.poll();
-                curLevel.add(temp.val);
+
+                if (res.size() % 2 == 0) curLevel.add(temp.val);
+                else curLevel.add(0, temp.val);
+
                 if (temp.left != null) queue.add(temp.left);
                 if (temp.right != null) queue.add(temp.right);
             }
             res.add(curLevel);
         }
 
-        Collections.reverse(res);
         return res;
     }
 }
 
-public class _0107_BinaryTreeLevelOrderTraversalII {
+public class _0103_BinaryTreeZigzagLevelOrderTraversal {
     public static void main(String[] args) {
         TreeNode root = new TreeNode(3);
         TreeNode t1 = new TreeNode(9);
@@ -66,8 +73,8 @@ public class _0107_BinaryTreeLevelOrderTraversalII {
         root.right.left = t3;
         root.right.right = t4;
 
-        Solution0107 slt = new Solution0107();
-        List<List<Integer>> res = slt.levelOrderBottom(root);
+        Solution0103 slt = new Solution0103();
+        List<List<Integer>> res = slt.zigzagLevelOrder(root);
         System.out.println(res);
     }
 }
