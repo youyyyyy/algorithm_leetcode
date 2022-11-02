@@ -1,4 +1,4 @@
-package leetcode_tree;
+package leetcode_tree.binary_search_tree;
 
 import fcc_code_example_recursion.TreeNode;
 

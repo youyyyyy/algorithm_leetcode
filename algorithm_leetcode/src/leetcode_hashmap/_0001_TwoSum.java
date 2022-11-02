@@ -13,16 +13,10 @@ class Solution0001 {
 
         HashMap<Integer, Integer> map = new HashMap<>();
 
-        //    A number is looking for another number so that they can add up to target
-        //    If not found, put itself and its index in the map
-        //    If found, return
         for (int i = 0; i < nums.length; i++) {
             int key = target - nums[i];
-            if (!map.containsKey(key)) {
-                map.put(nums[i], i);
-            } else {
-                return new int[]{map.get(key), i};
-            }
+            if (map.containsKey(key)) return new int[]{i, map.get(key)};
+            map.put(nums[i], i);
         }
 
         return null;
@@ -30,19 +24,21 @@ class Solution0001 {
 }
 
 /*
-    Brute force:
-    Time complexity: O(n^2)
-    Space complexity: O(1)
-    public int[] twoSum2(int[] nums, int target) {
+Brute force:
+Time complexity: O(n^2)
+Space complexity: O(1)
+class Solution0001 {
+    public int[] twoSum(int[] nums, int target) {
         for (int i = 0; i < nums.length; i++) {
             for (int j = i + 1; j < nums.length; j++) {
-                if (nums[i] + nums[j] == target) {
-                    return new int[]{i, j};
-                }
+                if (nums[i] + nums[j] == target) return new int[]{i, j};
             }
         }
         return null;
-    }*/
+    }
+}
+
+*/
 
 
 public class _0001_TwoSum {
