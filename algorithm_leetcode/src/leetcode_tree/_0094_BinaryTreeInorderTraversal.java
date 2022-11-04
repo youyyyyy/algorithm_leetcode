@@ -12,13 +12,17 @@ Recursive:
 class Solution0094 {
     public List<Integer> inorderTraversal(TreeNode root) {
         List<Integer> res = new ArrayList<>();
-        if (root == null) return res;
+        if(root == null) return res;
 
-        res.addAll(inorderTraversal(root.left));
-        res.add(root.val);
-        res.addAll(inorderTraversal(root.right));
-
+        dfs(root, res);
         return res;
+    }
+
+    private void dfs(TreeNode root, List<Integer> res) {
+        if(root == null) return;
+        dfs(root.left, res);
+        res.add(root.val);
+        dfs(root.right, res);
     }
 }
 */

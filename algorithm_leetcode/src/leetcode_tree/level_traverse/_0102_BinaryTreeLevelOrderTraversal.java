@@ -37,15 +37,15 @@ class Solution0102 {
 
         while (!queue.isEmpty()) {
             // number of elements in each level
-            int count = queue.size();
-            List<Integer> level = new ArrayList<>();
-            for (int i = 0; i < count; i++) {
-                TreeNode temp = queue.poll();
-                level.add(temp.val);
-                if (temp.left != null) queue.add(temp.left);
-                if (temp.right != null) queue.add(temp.right);
+            int len = queue.size();
+            List<Integer> curLevel = new ArrayList<>();
+            for (int i = 0; i < len; i++) {
+                TreeNode cur = queue.poll();
+                curLevel.add(cur.val);
+                if (cur.left != null) queue.add(cur.left);
+                if (cur.right != null) queue.add(cur.right);
             }
-            res.add(level);
+            res.add(curLevel);
         }
 
         return res;
