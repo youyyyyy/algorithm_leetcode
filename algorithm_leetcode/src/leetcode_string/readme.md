@@ -2,7 +2,7 @@
 
 ### 1. Anagrams
 
-An **Anagram** of a string is a string that contains the same characters with a different (or the same) ordering.
+>  An **Anagram** of a string is a string that contains the same characters with a different (or the same) ordering.
 
 | No.  | Problem                                                      | Difficulty |
 | ---- | ------------------------------------------------------------ | ---------- |
@@ -11,6 +11,7 @@ An **Anagram** of a string is a string that contains the same characters with a 
 | 0049 | [Group Anagrams](https://leetcode.com/problems/group-anagrams/) | Medium     |
 | 1347 | [Minimum Number of Steps to Make Two Strings Anagram](https://leetcode.com/problems/minimum-number-of-steps-to-make-two-strings-anagram/) | Medium     |
 | 2186 | [Minimum Number of Steps to Make Two Strings Anagram II](https://leetcode.com/problems/minimum-number-of-steps-to-make-two-strings-anagram-ii/) | Medium     |
+| 0438 | [Find All Anagrams in a String](https://leetcode.com/problems/find-all-anagrams-in-a-string/) | Medium     |
 
 Similar: 
 
@@ -18,5 +19,18 @@ Similar:
 | ---- | ------------------------------------------------------------ | ---------- |
 | 0383 | [Ransom Note](https://leetcode.com/problems/ransom-note/)    | Easy       |
 | 0387 | [First Unique Character in a String](https://leetcode.com/problems/first-unique-character-in-a-string/) | Easy       |
+
+<br>
+
+### 2. Palindrome
+
+| No.  | Problem                                                      | Difficulty |
+| ---- | ------------------------------------------------------------ | ---------- |
+| 0125 | [Valid Palindrome](https://leetcode.com/problems/valid-palindrome/) | Easy       |
+| 0680 | [Valid Palindrome II](https://leetcode.com/problems/valid-palindrome-ii/) | Easy       |
 |      |                                                              |            |
+
+<br>
+
+### 3. Reverse 
 

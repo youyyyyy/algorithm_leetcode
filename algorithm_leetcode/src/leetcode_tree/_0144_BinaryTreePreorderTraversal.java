@@ -15,11 +15,15 @@ class Solution0144 {
         List<Integer> res = new ArrayList<>();
         if (root == null) return res;
 
-        res.add(root.val);
-        res.addAll(preorderTraversal(root.left));
-        res.addAll(preorderTraversal(root.right));
-
+        dfs(root, res);
         return res;
+    }
+
+    private void dfs(TreeNode root, List<Integer> res) {
+        if(root == null) return;
+        res.add(root.val);
+        dfs(root.left, res);
+        dfs(root.right, res);
     }
 }
 */

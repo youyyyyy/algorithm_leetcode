@@ -1,4 +1,4 @@
-package leetcode_string;
+package leetcode_string.anagram;
 
 class Solution1347 {
     public int minSteps(String s, String t) {

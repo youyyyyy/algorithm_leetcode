@@ -9,15 +9,19 @@ import java.util.Stack;
 /*
 Recursive:
 class Solution0145 {
-    public List<Integer> postorderTraversal(TreeNode root) {
+    public List<Integer> inorderTraversal(TreeNode root) {
         List<Integer> res = new ArrayList<>();
         if (root == null) return res;
 
-        res.addAll(postorderTraversal(root.left));
-        res.addAll(postorderTraversal(root.right));
-        res.add(root.val);
-
+        dfs(root, res);
         return res;
+    }
+
+    private void dfs(TreeNode root, List<Integer> res) {
+        if (root == null) return;
+        dfs(root.left, res);
+        res.add(root.val);
+        dfs(root.right, res);
     }
 }
 */

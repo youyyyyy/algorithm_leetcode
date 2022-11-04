@@ -1,4 +1,4 @@
-package leetcode_string;
+package leetcode_string.anagram;
 
 
 /*

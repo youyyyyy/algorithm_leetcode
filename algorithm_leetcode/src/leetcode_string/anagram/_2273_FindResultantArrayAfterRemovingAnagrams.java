@@ -1,4 +1,4 @@
-package leetcode_string;
+package leetcode_string.anagram;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,10 +29,10 @@ class Solution2273 {
         List<String> res = new ArrayList<>();
 
         String prev = "";
-        for (int i = 0; i < words.length; i++) {
-            if (!isAnagram(prev, words[i])) {
-                res.add(words[i]);
-                prev = words[i];
+        for (String word : words) {
+            if (!isAnagram(prev, word)) {
+                res.add(word);
+                prev = word;
             }
         }
 

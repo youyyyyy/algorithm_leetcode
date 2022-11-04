@@ -44,6 +44,8 @@ void dfs(TreeNode root) {
 
 - Post-order
 
+When you delete nodes in a tree, deletion process will be in post-order. Also, post-order is widely use in mathematical expression. 
+
 ```java
 // left -> right -> node  [4, 5, 2, 3, 1]
 void dfs(TreeNode root) {
