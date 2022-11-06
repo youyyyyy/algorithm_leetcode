@@ -1,41 +1,7 @@
-package leetcode_tree;
+package leetcode_recursion.tree;
 
 
 import fcc_code_example_recursion.TreeNode;
-
-/*
-BFS:
-class Solution0112 {
-    public boolean hasPathSum(TreeNode root, int targetSum) {
-        if (root == null) return false;
-
-        Queue<TreeNode> nodeQueue = new LinkedList<>();
-        Queue<Integer> valQueue = new LinkedList<>();
-
-        nodeQueue.add(root);
-        valQueue.add(root.val);
-
-        while (!nodeQueue.isEmpty()) {
-            TreeNode curNode = nodeQueue.poll();
-            int curVal = valQueue.poll();
-            if (curNode.left == null && curNode.right == null && curVal == targetSum) return true;
-
-            if (curNode.left != null) {
-                nodeQueue.add(curNode.left);
-                valQueue.add(curVal + curNode.val);
-            }
-
-            if (curNode.right != null) {
-                nodeQueue.add(curNode.right);
-                valQueue.add(curVal + curNode.val);
-            }
-        }
-
-        return false;
-    }
-}
-
-*/
 
 class Solution0112 {
     public boolean hasPathSum(TreeNode root, int targetSum) {

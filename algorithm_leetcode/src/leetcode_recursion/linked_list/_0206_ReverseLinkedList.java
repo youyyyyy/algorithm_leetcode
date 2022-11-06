@@ -1,4 +1,4 @@
-package leetcode_recursion;
+package leetcode_recursion.linked_list;
 
 import fcc_code_example_recursion.ListNode;
 
