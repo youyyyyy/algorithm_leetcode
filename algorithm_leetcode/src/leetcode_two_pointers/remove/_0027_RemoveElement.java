@@ -1,4 +1,4 @@
-package leetcode_two_pointers;
+package leetcode_two_pointers.remove;
 
 /*
  * Time complexity: O(n)

@@ -96,6 +96,8 @@ void bfs(TreeNode root) { // [1, 2, 3, 4, 5]
 | 0199 | [Binary Tree Right Side View ](https://leetcode.com/problems/binary-tree-right-side-view/) | Medium     |
 | 1161 | [Maximum Level Sum of a Binary Tree](https://leetcode.com/problems/maximum-level-sum-of-a-binary-tree/) | Medium     |
 | 0662 | [Maximum Width of Binary Tree](https://leetcode.com/problems/maximum-width-of-binary-tree/) | Medium     |
+| 0116 | [Populating Next Right Pointers in Each Node](https://leetcode.com/problems/populating-next-right-pointers-in-each-node/) | Medium     |
+| 0117 | [Populating Next Right Pointers in Each Node II](https://leetcode.com/problems/populating-next-right-pointers-in-each-node-ii/) | Medium     |
 
 We can also use level traverse to check completeness of a binary tree:
 

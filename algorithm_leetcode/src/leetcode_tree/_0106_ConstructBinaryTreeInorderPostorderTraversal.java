@@ -2,7 +2,7 @@ package leetcode_tree;
 
 import fcc_code_example_recursion.TreeNode;
 
-import java.util.HashMap;
+import java.util.*;
 
 class Solution0106 {
     private int post_idx; // index of last element in the postorder array
@@ -41,6 +41,35 @@ public class _0106_ConstructBinaryTreeInorderPostorderTraversal {
         int[] inorder = {9, 3, 15, 20, 7};
         int[] postorder = {9, 15, 7, 20, 3};
         Solution0106 slt = new Solution0106();
+        TreeNode res = slt.buildTree(inorder, postorder);
+        printTree(res);
 
+    }
+
+    public static void printTree(TreeNode root) {
+        if (root == null) return;
+
+        List<String> res = new ArrayList<>();
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.add(root);
+        res.add(String.valueOf(root.val));
+        while (!queue.isEmpty()) {
+            TreeNode cur = queue.poll();
+            if (cur.left != null) {
+                queue.add(cur.left);
+                res.add(String.valueOf(cur.left.val));
+            } else {
+                res.add("null");
+            }
+
+            if (cur.right != null) {
+                queue.add(cur.right);
+                res.add(String.valueOf(cur.right.val));
+            } else {
+                res.add("null");
+            }
+        }
+
+        System.out.println(res);
     }
 }
