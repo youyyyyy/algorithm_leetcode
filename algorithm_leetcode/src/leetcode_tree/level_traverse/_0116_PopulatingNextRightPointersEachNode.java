@@ -37,8 +37,10 @@ class Solution0116 {
             for (int i = 0; i < len; i++) {
                 Node0116 cur = queue.poll();
                 if (i < len - 1) cur.next = queue.peek();
-                if (cur.left != null) queue.add(cur.left);
-                if (cur.right != null) queue.add(cur.right);
+                if (cur.left != null) {
+                    queue.add(cur.left);
+                    queue.add(cur.right);
+                }
             }
         }
 
@@ -47,33 +49,27 @@ class Solution0116 {
 }
 */
 
+/*
+ * Time complexity: O(n)
+ * Space complexity: O(1)
+ * */
 class Solution0116 {
     public Node0116 connect(Node0116 root) {
-        Node0116 res = root;
-        Node0116 prev;
+        if (root == null) return null;
+
         Node0116 leftMost = root;
-        boolean isLeftMost = false;
 
-        while (root != null) {
-            if (isLeftMost) {
-                leftMost = root;
-                isLeftMost = false;
+        while (leftMost.left != null) {
+            Node0116 head = leftMost;
+            while (head != null) {
+                head.left.next = head.right;
+                if (head.next != null) head.right.next = head.next.left;
+                head = head.next;
             }
-            if (root.left != null) {
-                prev = root.next;
-                root.left.next = root.right;
-                root.right.next = prev == null ? null : prev.left;
-            }
-
-            if (root.next == null) {
-                isLeftMost = true;
-                root = leftMost.left;
-            } else {
-                root = root.next;
-            }
+            leftMost = leftMost.left;
         }
 
-        return res;
+        return root;
     }
 }
 

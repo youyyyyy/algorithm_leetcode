@@ -27,7 +27,7 @@ class Solution0013 {
 
 public class _0013_RomantoInteger {
     public static void main(String[] args) {
-        String s = "LVIII";
+        String s = "VII  ";
         Solution0013 slt = new Solution0013();
         int res = slt.romanToInt(s);
         System.out.println(res);

@@ -1,4 +1,4 @@
-package leetcode_binary_search;
+package leetcode_binary_search.peak;
 
 
 /*

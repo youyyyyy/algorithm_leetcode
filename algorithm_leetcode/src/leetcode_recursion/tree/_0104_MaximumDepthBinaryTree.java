@@ -2,6 +2,7 @@ package leetcode_recursion.tree;
 
 import fcc_code_example_recursion.TreeNode;
 
+
 /*
  * "Top-down" Solution - can be considered as a kind of preorder traversal
  * in each recursive call, we will visit the node first to come up with some values,
@@ -15,7 +16,7 @@ import fcc_code_example_recursion.TreeNode;
 
 class Solution0104_topDown {
 
-    private int res = 0;
+    private int res;
 
     public int maxDepth(TreeNode root) {
 
@@ -52,7 +53,7 @@ class Solution0104_bottomUp {
 
         // 1. return specific value for null node
         if (root == null) return 0;
-        // 2. left_ans = botton_up(root.left)
+        // 2. left_ans = bottom_up(root.left)
         int leftMax = maxDepth(root.left);
         // 3. right_ans = bottom_up(root.right)
         int rightMax = maxDepth(root.right);

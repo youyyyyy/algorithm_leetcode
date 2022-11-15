@@ -3,19 +3,18 @@ package leetcode_two_pointers.remove;
 class Solution1047 {
     public String removeDuplicates(String s) {
 
+        if (s.length() == 1) return s;
+
         // using two pointers to simulate stack
-        int left = 1, right = 1;
-        char[] arr = s.toCharArray();
-        for (; right < arr.length; right++) {
-            if (left > 0) {
-                if (arr[right] != arr[left - 1]) arr[left++] = arr[right];
-                else left--; // has duplicates, remove elements
-            } else { // stack is empty, add element
-                arr[left++] = arr[right];
-            }
+        int i = 1, j = 1;
+        char[] chs = s.toCharArray();
+
+        for (; j < chs.length; j++) {
+            if (i < 1 || chs[i - 1] != chs[j]) chs[i++] = chs[j]; // stack is empty or different ch, add to stack
+            else if (chs[i - 1] == chs[j]) i--; // has duplicates, remove from stack
         }
 
-        return new String(arr, 0, left);
+        return new String(chs, 0, i);
     }
 }
 

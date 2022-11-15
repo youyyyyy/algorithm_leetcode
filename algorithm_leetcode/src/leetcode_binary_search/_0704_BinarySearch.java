@@ -1,6 +1,5 @@
 package leetcode_binary_search;
 
-
 /*
  * Time complexity: O(logn)
  * Space complexity: O(1)
@@ -19,6 +18,17 @@ class Solution0704 {
         return -1;
     }
 }
+
+
+/*
+using API:
+class Solution {
+    public int search(int[] nums, int target) {
+        int res = Arrays.binarySearch(nums, target);
+        return res >= 0 ? res : -1;
+    }
+}
+*/
 
 public class _0704_BinarySearch {
     public static void main(String[] args) {
