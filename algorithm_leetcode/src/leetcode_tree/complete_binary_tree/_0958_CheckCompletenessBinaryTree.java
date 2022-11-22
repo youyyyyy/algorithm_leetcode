@@ -16,12 +16,12 @@ class Solution0958 {
             TreeNode left = temp.left;
             TreeNode right = temp.right;
 
-            if (isLastLevel && !(left == null && right == null)) return false;
             if (left == null && right != null) return false;
+            else if (isLastLevel == false && (left == null || right == null)) isLastLevel = true;
+            else if (isLastLevel == true && !(left == null && right == null)) return false;
 
             if (left != null) queue.add(left);
             if (right != null) queue.add(right);
-            if (left == null || right == null) isLastLevel = true;
 
         }
 

@@ -2,25 +2,30 @@ package leetcode_linked_list;
 
 import fcc_code_example_recursion.ListNode;
 
+/*
+ * Time complexity: O(n)
+ * Space complexity: O(1)
+ * */
 class Solution19 {
     public ListNode removeNthFromEnd(ListNode head, int n) {
-        ListNode dummy = new ListNode(-1, head);
-        ListNode fast = head;
-        ListNode slow = dummy;
-        for (int i = 0; i < n; i++) {
-            fast = fast.next;
-        }
-        while (fast != null) {
+        ListNode pre = new ListNode(-1, head);
+        ListNode fast = pre;
+        ListNode slow = pre;
+
+        for (int i = 0; i < n; i++) fast = fast.next;
+
+        while (fast.next != null) {
             fast = fast.next;
             slow = slow.next;
         }
 
         slow.next = slow.next.next;
-        return dummy.next;
+
+        return pre.next;
     }
 }
 
-public class _19_RemoveNthNodeFromEndList {
+public class _0019_RemoveNthNodeFromEndList {
     public static void main(String[] args) {
         ListNode n1 = new ListNode(1);
         ListNode n2 = new ListNode(2);

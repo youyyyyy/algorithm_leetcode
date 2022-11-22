@@ -7,43 +7,47 @@ class Solution0658 {
     public List<Integer> findClosestElements(int[] arr, int k, int x) {
         List<Integer> res = new ArrayList<>();
 
-        // 1. use binary search to find the closest element to x
-        int lo = 0, hi = arr.length - 1;
-        int loc;
-        while (lo <= hi) {
-            int mid = lo + (hi - lo) / 2;
-            if (arr[mid] >= x) {
-                hi = mid - 1;
-            } else {
-                lo = mid + 1;
-            }
-        }
-        loc = lo;
-
-        if (loc == 0) {
+        int len = arr.length;
+        if (x < arr[0]) {
             for (int i = 0; i < k; i++) res.add(arr[i]);
-        } else if (loc == arr.length) {
-            for (int i = 0; i < k; i++) res.add(arr[arr.length - k + i]);
+        } else if (x > arr[len - 1]) {
+            for (int i = 0; i < k; i++) res.add(arr[len - k + i]);
         } else {
-            int i = loc, j = loc;
-            while (j - i - 1 < k) {
-                if (i >= 0 && j <= arr.length - 1) {
-                    if (Math.abs(arr[i] - x) <= Math.abs(arr[j] - x)) i--;
-                    else j++;
-                } else if (i < 0) {
-                    j++;
+            int pos = findInsertionPosition(arr, 0, len - 1, x);
+            int left = pos, right = pos;
+            while (right - left <= k) {
+                if (left >= 0 && right < len) {
+                    if (Math.abs(arr[left] - x) <= Math.abs(arr[right] - x)) left--;
+                    else right++;
+                } else if (left < 0) {
+                    right++;
                 } else {
-                    i--;
+                    left--;
                 }
             }
 
-            for (int n = i + 1; n < j; n++) res.add(arr[n]);
+
+
+
+            for (int i = left + 1; i < right; i++) res.add(arr[i]);
         }
 
         return res;
-
     }
+
+    private int findInsertionPosition(int[] arr, int lo, int hi, int target) {
+        while (lo < hi) {
+            int mid = lo + (hi - lo) / 2;
+            if (arr[mid] == target) return mid;
+            else if (arr[mid] < target) lo = mid + 1;
+            else hi = mid;
+        }
+
+        return lo;
+    }
+
 }
+
 
 public class _0658_FindKClosesElements {
     public static void main(String[] args) {

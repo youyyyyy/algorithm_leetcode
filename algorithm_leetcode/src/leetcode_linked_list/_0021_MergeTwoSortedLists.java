@@ -2,6 +2,11 @@ package leetcode_linked_list;
 
 import fcc_code_example_recursion.ListNode;
 
+
+/*
+ * Time complexity: O(m+n)
+ * Space complexity: O(1)
+ * */
 class Solution0021 {
     public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
 
@@ -29,8 +34,29 @@ class Solution0021 {
     }
 }
 
-// Time complexity: O(m+n)
-// Space complexity: O(1)
+
+/*
+Recursion:
+time complexity: O(m+n)
+space complexity: O(m+n)
+class Solution0021 {
+    public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
+        // base case
+        if (list1 == null) return list2;
+        if (list2 == null) return list1;
+
+        if (list1.val <= list2.val) {
+            list1.next = mergeTwoLists(list1.next, list2);
+            return list1;
+        } else {
+            list2.next = mergeTwoLists(list1, list2.next);
+            return list2;
+        }
+    }
+}
+*/
+
+
 public class _0021_MergeTwoSortedLists {
 
     public static void main(String[] args) {

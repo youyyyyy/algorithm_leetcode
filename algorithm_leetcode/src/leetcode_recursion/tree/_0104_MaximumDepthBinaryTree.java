@@ -16,20 +16,19 @@ import fcc_code_example_recursion.TreeNode;
 
 class Solution0104_topDown {
 
-    private int res;
+    private int maxLevel;
 
     public int maxDepth(TreeNode root) {
 
-        if (root == null) return res;
         dfs(root, 1);
-        return res;
+        return maxLevel;
     }
 
     private void dfs(TreeNode root, int level) {
         // 1. return specific value for null node
         if (root == null) return;
         // 2. update the answer if needed
-        if (root.left == null && root.right == null) res = Math.max(res, level);
+        if (root.left == null && root.right == null) maxLevel = Math.max(maxLevel, level);
 
         // 3. left_ans = top_down(root.left, left_params)
         dfs(root.left, level + 1);
