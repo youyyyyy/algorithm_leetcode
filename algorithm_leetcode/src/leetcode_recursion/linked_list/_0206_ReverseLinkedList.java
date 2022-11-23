@@ -2,17 +2,46 @@ package leetcode_recursion.linked_list;
 
 import fcc_code_example_recursion.ListNode;
 
-// Time complexity: O(n)
-// Space complexity: O(n)
+/*
+ * Time complexity: O(n)
+ * Space complexity: O(n)
+ * */
 class Solution0206 {
     public ListNode reverseList(ListNode head) {
         if (head == null || head.next == null) return head;
-        ListNode temp = reverseList(head.next);
+
+        ListNode newHead = reverseList(head.next);
         head.next.next = head;
         head.next = null;
-        return temp;
+
+        return newHead;
     }
 }
+
+/*
+Iterative:
+ - Time complexity: O(n)
+ - Space complexity: O(1)
+class Solution {
+    public ListNode reverseList(ListNode head) {
+        if (head == null || head.next == null) return head;
+
+        ListNode prev = null;
+        ListNode cur = head;
+
+        while (cur != null) {
+            ListNode temp = cur.next;
+            cur.next = prev;
+            prev = cur;
+            cur = temp;
+        }
+
+        return prev;
+
+    }
+}
+*/
+
 
 public class _0206_ReverseLinkedList {
 
