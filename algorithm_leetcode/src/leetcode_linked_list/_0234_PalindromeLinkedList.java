@@ -33,9 +33,13 @@ class Solution0234 {
     }
 
 
-    // return the middle node, middle is defined as:
-    // 1 -> 2 -> 3 return 1
-    // 1 -> 2 -> 3 -> 4 return 2
+    /*
+     * return the middle node, middle is defined as:
+     * 1 -> 2 -> 3 return 1
+     * 1 -> 2 -> 3 -> 4 return 2
+     * This is a bit different from https://leetcode.com/problems/middle-of-the-linked-list/
+     * because we'd better restore the second half. We should not modify the input
+     * */
     private ListNode findMiddle(ListNode head) {
         ListNode fast = head;
         ListNode slow = head;

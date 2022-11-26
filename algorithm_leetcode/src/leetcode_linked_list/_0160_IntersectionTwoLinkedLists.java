@@ -2,13 +2,12 @@ package leetcode_linked_list;
 
 import fcc_code_example_recursion.ListNode;
 
-
-// Time complexity: O(M+N)
-// Space complexity: O(1)
-class Solution160 {
+/*
+ * Time complexity: O(m+n)
+ * Space complexity: O(1)
+ * */
+class Solution0160 {
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
-        if (headA == null || headB == null) return null;
-
         ListNode curA = headA;
         ListNode curB = headB;
 
@@ -16,11 +15,12 @@ class Solution160 {
             curA = curA == null ? headB : curA.next;
             curB = curB == null ? headA : curB.next;
         }
+
         return curA;
     }
 }
 
-public class _160_IntersectionTwoLinkedLists {
+public class _0160_IntersectionTwoLinkedLists {
     public static void main(String[] args) {
         ListNode n1 = new ListNode(9);
         ListNode n2 = new ListNode(9);
@@ -46,10 +46,9 @@ public class _160_IntersectionTwoLinkedLists {
         n3.setNext(intersection1);
         n3_2.setNext(intersection1);
 
-        Solution160 slt = new Solution160();
+        Solution0160 slt = new Solution0160();
         ListNode res = slt.getIntersectionNode(n1, n1_2);
         System.out.println(res.val);
-
     }
 
 }

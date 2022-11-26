@@ -1,25 +1,25 @@
 # Linked List
 
-### 1. Operation on Linked List
+### 1. Basic
 
 | No.  | Problem                                                      | Difficulty |
 | ---- | ------------------------------------------------------------ | ---------- |
-| 0002 | [Add Two Numbers](https://leetcode.com/problems/add-two-numbers/) | Medium     |
-|      |                                                              |            |
-|      |                                                              |            |
-
-
+| 0876 | [Middle of the Linked List](https://leetcode.com/problems/middle-of-the-linked-list/) | Easy       |
+| 0141 | [Linked List Cycle](https://leetcode.com/problems/linked-list-cycle/) | Easy       |
+| 0142 | [Linked List Cycle II](https://leetcode.com/problems/linked-list-cycle-ii/) | Medium     |
+| 0160 | [Intersection of Two Linked Lists](https://leetcode.com/problems/intersection-of-two-linked-lists/) | Easy       |
 
 <br>
 
 ### 2. Remove
 
-Fast & slow pointer:
-
 | No.  | Problem                                                      | Difficulty |
 | ---- | ------------------------------------------------------------ | ---------- |
 | 0019 | [Remove Nth Node From End of List](https://leetcode.com/problems/remove-nth-node-from-end-of-list/) | Medium     |
-|      |                                                              |            |
+| 0083 | [Remove Duplicates from Sorted List](https://leetcode.com/problems/remove-duplicates-from-sorted-list/) | Easy       |
+| 0203 | [Remove Linked List Elements](https://leetcode.com/problems/remove-linked-list-elements/) | Easy       |
+| 0082 | [Remove Duplicates from Sorted List II](https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/) | Medium     |
+| 1836 | [Remove Duplicates From an Unsorted Linked List](https://leetcode.com/problems/remove-duplicates-from-an-unsorted-linked-list/) (0203) | Medium     |
 |      |                                                              |            |
 
 <br>
@@ -40,15 +40,16 @@ Fast & slow pointer:
 | ---- | ------------------------------------------------------------ | ---------- |
 | 0024 | [Swap Nodes in Pairs ](https://leetcode.com/problems/swap-nodes-in-pairs/) | Medium     |
 | 0206 | [Reverse Linked List](https://leetcode.com/problems/reverse-linked-list/) | Easy       |
+| 0092 | [Reverse Linked List II](https://leetcode.com/problems/reverse-linked-list-ii/) | Medium     |
 | 0234 | [Palindrome Linked List](https://leetcode.com/problems/palindrome-linked-list/) (0876 + 0206) | Easy       |
 
 <br>
 
-### 5. Other
+### 5. Operation on Linked List
 
 | No.  | Problem                                                      | Difficulty |
 | ---- | ------------------------------------------------------------ | ---------- |
-| 0876 | [Middle of the Linked List](https://leetcode.com/problems/middle-of-the-linked-list/) | Easy       |
-|      |                                                              |            |
+| 0002 | [Add Two Numbers](https://leetcode.com/problems/add-two-numbers/) | Medium     |
+| 0445 | [Add Two Numbers II](https://leetcode.com/problems/add-two-numbers-ii/) | Medium     |
 |      |                                                              |            |
 

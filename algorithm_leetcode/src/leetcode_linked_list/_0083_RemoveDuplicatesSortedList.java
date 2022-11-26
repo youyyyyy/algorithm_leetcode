@@ -2,11 +2,14 @@ package leetcode_linked_list;
 
 import fcc_code_example_recursion.ListNode;
 
-// Time complexity: O(n)
-// Space complexity: O(1)
+
+/*
+ * Time complexity: O(n)
+ * Space complexity: O(1)
+ * */
 class Solution0083 {
     public ListNode deleteDuplicates(ListNode head) {
-        if (head == null) return null;
+        if (head == null || head.next == null) return head;
 
         ListNode cur = head;
         while (cur.next != null) {

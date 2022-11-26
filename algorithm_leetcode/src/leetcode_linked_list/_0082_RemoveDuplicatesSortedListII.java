@@ -2,31 +2,34 @@ package leetcode_linked_list;
 
 import fcc_code_example_recursion.ListNode;
 
-class Solution82 {
+
+/*
+ * Time complexity: O(n)
+ * Space complexity: O(1)
+ * */
+class Solution0082 {
     public ListNode deleteDuplicates(ListNode head) {
 
         if (head == null || head.next == null) return head;
 
-        ListNode dummy = new ListNode(-1, head);
+        ListNode pre = new ListNode(-1, head);
+        ListNode cur = pre; // use this node to connect distinct node
 
-        ListNode slow = dummy;  // use this node to connect distinct node
-        ListNode fast = head; // use this node to check duplicate
-
-        while (fast != null && fast.next != null) {
-            if (fast.val != fast.next.val) {
-                slow = fast;
+        while (head != null && head.next != null) {
+            if (head.val == head.next.val) {
+                while (head.next != null && head.val == head.next.val) head = head.next;
+                cur.next = head.next;
             } else {
-                while (fast.next != null && fast.val == fast.next.val) fast = fast.next;
-                slow.next = fast.next;
+                cur = head;
             }
-            fast = fast.next;
+            head = head.next;
         }
 
-        return dummy.next;
+        return pre.next;
     }
 }
 
-public class _82_RemoveDuplicatesSortedListII {
+public class _0082_RemoveDuplicatesSortedListII {
     public static void main(String[] args) {
         ListNode n1 = new ListNode(1);
         ListNode n2 = new ListNode(2);
@@ -43,7 +46,7 @@ public class _82_RemoveDuplicatesSortedListII {
         n5.setNext(n6);
         n6.setNext(n7);
 
-        Solution82 slt = new Solution82();
+        Solution0082 slt = new Solution0082();
         ListNode res = slt.deleteDuplicates(n1);
         printLinkedList(res);
 

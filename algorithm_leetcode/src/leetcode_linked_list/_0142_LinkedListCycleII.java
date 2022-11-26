@@ -2,17 +2,14 @@ package leetcode_linked_list;
 
 import fcc_code_example_recursion.ListNode;
 
-
-
 /*
 Solution 1: HashSet
-Time complexity: O(N)
-Space complexity: O(N)
-
+- Time complexity: O(N)
+- Space complexity: O(N)
 class Solution0142 {
-
     public ListNode detectCycle(ListNode head) {
         HashSet<ListNode> visited = new HashSet<>();
+
         while (head != null) {
             if (visited.contains(head)) return head;
             visited.add(head);
@@ -27,35 +24,37 @@ class Solution0142 {
 /*
 Time complexity: O(N)
 Space complexity: O(1)
-*/
 
+Deduction:
+ - suppose we have a nodes in before cycle, b nodes in the cycle
+ 1. fast pointer moves two steps, slow pointer moves one step --> f = 2s
+ 2. when fast pointer catches slow pointer in the cycle, f = s + nb --> s = nb
+ 3. after first encounter, if s moves a steps, it will move to where cycle begins
+ 4. so let fast points to head, fast needs to move a steps to the entrance. slow also needs to move a steps to the entrance
+    when fast and slow encounters again, they both points to the node where cycle begins
+*/
 class Solution0142 {
     public ListNode detectCycle(ListNode head) {
+        ListNode slow = findIntersection(head);
+        if (slow == null) return null;
 
-        ListNode slow = hasCycle(head);
+        ListNode fast = head;
+        while (fast != slow) {
+            fast = fast.next;
+            slow = slow.next;
+        }
 
-        if (hasCycle(slow) == null) {
-            return null;
-        }
-        else {
-            ListNode fast = head;
-            while(slow != fast) {
-                slow = slow.next;
-                fast = fast.next;
-            }
-            return slow;
-        }
+        return fast;
     }
 
-    private ListNode hasCycle(ListNode head) {
-
+    private ListNode findIntersection(ListNode head) {
         ListNode fast = head;
         ListNode slow = head;
 
         while (fast != null && fast.next != null) {
             fast = fast.next.next;
             slow = slow.next;
-            if (slow == fast) return slow;
+            if (fast == slow) return slow;
         }
 
         return null;

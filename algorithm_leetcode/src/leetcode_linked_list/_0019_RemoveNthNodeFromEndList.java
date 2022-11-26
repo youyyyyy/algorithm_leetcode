@@ -6,7 +6,7 @@ import fcc_code_example_recursion.ListNode;
  * Time complexity: O(n)
  * Space complexity: O(1)
  * */
-class Solution19 {
+class Solution0019 {
     public ListNode removeNthFromEnd(ListNode head, int n) {
         ListNode pre = new ListNode(-1, head);
         ListNode fast = pre;
@@ -38,7 +38,7 @@ public class _0019_RemoveNthNodeFromEndList {
         n3.setNext(n4);
         n4.setNext(n5);
 
-        Solution19 slt = new Solution19();
+        Solution0019 slt = new Solution0019();
         ListNode res = slt.removeNthFromEnd(n1, 1);
         printLinkedList(res);
     }
