@@ -1,11 +1,9 @@
-package leetcode_linked_list;
+package leetcode_linked_list.other;
 
 import fcc_code_example_recursion.ListNode;
 
 class Solution1290 {
     public int getDecimalValue(ListNode head) {
-        if (head.next == null) return head.val;
-
         int sum = 0;
         while (head != null) {
             sum = sum * 2 + head.val;

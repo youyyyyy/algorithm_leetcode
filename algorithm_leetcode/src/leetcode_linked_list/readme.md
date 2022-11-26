@@ -8,6 +8,7 @@
 | 0141 | [Linked List Cycle](https://leetcode.com/problems/linked-list-cycle/) | Easy       |
 | 0142 | [Linked List Cycle II](https://leetcode.com/problems/linked-list-cycle-ii/) | Medium     |
 | 0160 | [Intersection of Two Linked Lists](https://leetcode.com/problems/intersection-of-two-linked-lists/) | Easy       |
+| 1290 | [Convert Binary Number in a Linked List to Integer](https://leetcode.com/problems/convert-binary-number-in-a-linked-list-to-integer/) | Easy       |
 
 <br>
 
@@ -20,7 +21,7 @@
 | 0203 | [Remove Linked List Elements](https://leetcode.com/problems/remove-linked-list-elements/) | Easy       |
 | 0082 | [Remove Duplicates from Sorted List II](https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/) | Medium     |
 | 1836 | [Remove Duplicates From an Unsorted Linked List](https://leetcode.com/problems/remove-duplicates-from-an-unsorted-linked-list/) (0203) | Medium     |
-|      |                                                              |            |
+| 0237 | [Delete Node in a Linked List](https://leetcode.com/problems/delete-node-in-a-linked-list/) | Medium     |
 
 <br>
 
@@ -51,5 +52,5 @@
 | ---- | ------------------------------------------------------------ | ---------- |
 | 0002 | [Add Two Numbers](https://leetcode.com/problems/add-two-numbers/) | Medium     |
 | 0445 | [Add Two Numbers II](https://leetcode.com/problems/add-two-numbers-ii/) | Medium     |
-|      |                                                              |            |
+| 0369 | [Plus One Linked List](https://leetcode.com/problems/plus-one-linked-list/) | Medium     |
 
