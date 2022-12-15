@@ -1,6 +1,6 @@
 package leetcode_linked_list.remove;
 
-import fcc_code_example_recursion.ListNode;
+import data_structure_class.ListNode;
 
 import java.util.HashMap;
 

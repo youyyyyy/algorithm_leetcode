@@ -1,7 +1,7 @@
 package leetcode_recursion.tree;
 
 
-import fcc_code_example_recursion.TreeNode;
+import resources.fcc_code_example_recursion.TreeNode;
 
 class Solution0112 {
     public boolean hasPathSum(TreeNode root, int targetSum) {

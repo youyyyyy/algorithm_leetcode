@@ -4,7 +4,7 @@
  * */
 
 
-package fcc_code_example_recursion;
+package resources.fcc_code_example_recursion;
 // (1) divide problem into several smaller subproblems, normally, the subproblem are similar to the original
 // (2) Conquer the subproblems by solving them recursively
 //     Base case: solve small enough problem by brute force

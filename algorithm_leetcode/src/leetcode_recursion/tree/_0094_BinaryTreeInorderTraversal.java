@@ -1,6 +1,6 @@
 package leetcode_recursion.tree;
 
-import fcc_code_example_recursion.TreeNode;
+import resources.fcc_code_example_recursion.TreeNode;
 
 import java.util.ArrayList;
 import java.util.List;

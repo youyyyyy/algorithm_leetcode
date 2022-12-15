@@ -3,7 +3,9 @@
  * url = https://www.youtube.com/watch?v=IJDJ0kBx2LM
  * */
 
-package fcc_code_example_recursion;// Definition for singly-linked list.
+package resources.fcc_code_example_recursion;// Definition for singly-linked list.
+
+import data_structure_class.ListNode;
 
 public class SortedList {
     public static void main(String[] args) {

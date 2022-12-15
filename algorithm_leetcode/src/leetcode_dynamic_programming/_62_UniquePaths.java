@@ -23,6 +23,27 @@ class Solution62 {
     }
 }
 
+/*
+Top-Down (Memoization):
+- Time complexity: O(m*n)
+- Space complexity: O(m+n)
+class Solution0062 {
+    HashMap<String, Integer> map = new HashMap<>();
+
+    public int uniquePaths(int m, int n) {
+        String key = m + "*" + n;
+        if (map.containsKey(key)) return map.get(key);
+
+        if (m == 1 && n == 1) return 1;
+        if (m == 0 || n == 0) return 0;
+
+        map.put(key, uniquePaths(m - 1, n) + uniquePaths(m, n - 1));
+        return map.get(key);
+    }
+}
+
+*/
+
 public class _62_UniquePaths {
     public static void main(String[] args) {
         Solution62 slt = new Solution62();

@@ -1,6 +1,6 @@
 package leetcode_tree;
 
-import fcc_code_example_recursion.TreeNode;
+import resources.fcc_code_example_recursion.TreeNode;
 
 class Solution0110 {
     public boolean isBalanced(TreeNode root) {

@@ -1,6 +1,6 @@
 package leetcode_recursion.linked_list;
 
-import fcc_code_example_recursion.ListNode;
+import data_structure_class.ListNode;
 
 /*
  * Time complexity: O(m+n)

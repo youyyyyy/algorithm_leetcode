@@ -1,6 +1,6 @@
 package leetcode_tree.complete_binary_tree;
 
-import fcc_code_example_recursion.TreeNode;
+import resources.fcc_code_example_recursion.TreeNode;
 
 import java.util.LinkedList;
 import java.util.Queue;

@@ -3,7 +3,7 @@
  * url = https://www.youtube.com/watch?v=MK-NZ4hN7rs
  * */
 
-package code_example_sliding_window;
+package resources.tse_code_example_sliding_window;
 
 public class SmallestSubarray {
 

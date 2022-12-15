@@ -1,6 +1,6 @@
 package leetcode_linked_list.reverse;
 
-import fcc_code_example_recursion.ListNode;
+import data_structure_class.ListNode;
 
 class Solution0092 {
     public ListNode reverseBetween(ListNode head, int left, int right) {

@@ -8,8 +8,8 @@
 int[] dp = new int[n + 1];
 dp[0] = 0;
 dp[1] = 1;
-for(int i = 2; i <= n; i++) {
-	dp[i] = dp[i-1] + dp[i-2];
+for (int i = 2; i <= n; i++) {
+    dp[i] = dp[i - 1] + dp[i - 2];
 }
 ```
 
@@ -34,6 +34,7 @@ public int fib(int n) {
 | No.  | Problem                                                      | Difficulty |
 | ---- | ------------------------------------------------------------ | ---------- |
 | 0509 | [Fibonacci Number](https://leetcode.com/problems/fibonacci-number/) | Easy       |
-| 0070 | [Climbing Stairs - LeetCode](https://leetcode.com/problems/climbing-stairs/) | Easy       |
+| 1137 | [N-th Tribonacci Number](https://leetcode.com/problems/n-th-tribonacci-number/) | Easy       |
+| 0070 | [Climbing Stairs](https://leetcode.com/problems/climbing-stairs/) | Easy       |
 | 0198 | [House Robber](https://leetcode.com/problems/house-robber/)  | Medium     |
 

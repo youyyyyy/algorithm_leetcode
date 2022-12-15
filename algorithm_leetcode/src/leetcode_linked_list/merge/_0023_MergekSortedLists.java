@@ -1,6 +1,6 @@
 package leetcode_linked_list.merge;
 
-import fcc_code_example_recursion.ListNode;
+import data_structure_class.ListNode;
 
 /*
 Solution 1: Brute Force

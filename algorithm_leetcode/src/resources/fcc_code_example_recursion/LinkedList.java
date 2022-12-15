@@ -3,8 +3,10 @@
  * url = https://www.youtube.com/watch?v=IJDJ0kBx2LM
  * */
 
-package fcc_code_example_recursion;
+package resources.fcc_code_example_recursion;
 
+
+import data_structure_class.ListNode;
 
 public class LinkedList {
     public static ListNode reverseList(ListNode head) {

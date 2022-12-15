@@ -3,7 +3,7 @@
  * url = https://www.youtube.com/watch?v=IJDJ0kBx2LM
  * */
 
-package fcc_code_example_recursion;
+package resources.fcc_code_example_recursion;
 
 public class MergeSort {
     public static void main(String[] args) {

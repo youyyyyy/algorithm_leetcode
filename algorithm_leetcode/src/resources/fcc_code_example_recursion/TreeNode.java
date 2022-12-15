@@ -1,4 +1,4 @@
-package fcc_code_example_recursion;
+package resources.fcc_code_example_recursion;
 
 public class TreeNode {
     public int val;

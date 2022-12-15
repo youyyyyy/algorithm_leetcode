@@ -1,6 +1,6 @@
 package leetcode_tree.binary_search_tree;
 
-import fcc_code_example_recursion.TreeNode;
+import resources.fcc_code_example_recursion.TreeNode;
 
 
 /*

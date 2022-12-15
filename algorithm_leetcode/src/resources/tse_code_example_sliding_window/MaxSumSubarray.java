@@ -16,7 +16,7 @@
 
 // Find the max sum subarray of a fixed size K
 
-package code_example_sliding_window;
+package resources.tse_code_example_sliding_window;
 
 public class MaxSumSubarray {
     public static void main(String[] args) {

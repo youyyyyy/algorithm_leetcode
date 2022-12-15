@@ -3,7 +3,7 @@
  * url = https://www.youtube.com/watch?v=IJDJ0kBx2LM
  * */
 
-package fcc_code_example_recursion;
+package data_structure_class;
 
 public class ListNode {
     public int val;
