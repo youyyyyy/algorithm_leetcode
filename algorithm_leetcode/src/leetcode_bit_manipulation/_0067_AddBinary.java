@@ -46,9 +46,8 @@ class Solution0067 {
 
 public class _0067_AddBinary {
     public static void main(String[] args) {
-        String a = "1010", b = "1011";
         Solution0067 slt = new Solution0067();
-        String res = slt.addBinary(a, b);
-        System.out.println(res);
+        System.out.println(slt.addBinary("11", "1"));
+        System.out.println(slt.addBinary("1010", "1011"));
     }
 }

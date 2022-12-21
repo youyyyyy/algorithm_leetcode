@@ -9,7 +9,7 @@
  * - you may assume that all input numbers are non-negative
  * */
 
-package resources.fcc_code_example_dynamic_programming;
+package resources.fcc_code_example_dynamic_programming.memo;
 
 import java.util.HashMap;
 
@@ -28,7 +28,7 @@ class Solution03 {
 
         for (int num : nums) {
             int remainder = target - num;
-            if (helper(remainder, nums, map) == true) {
+            if (helper(remainder, nums, map)) {
                 map.put(target, true);
                 return true;
             }

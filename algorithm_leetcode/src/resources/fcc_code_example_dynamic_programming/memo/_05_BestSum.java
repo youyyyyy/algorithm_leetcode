@@ -1,10 +1,10 @@
 /*
  * JS example from Coderbyte & freeCodeCamp.org
  * url = https://www.youtube.com/watch?v=oBt53YbR9Kk&t=12953s
- * https://leetcode.com/problems/coin-change/
+ * leetcode = https://leetcode.com/problems/coin-change/
  * */
 
-package resources.fcc_code_example_dynamic_programming;
+package resources.fcc_code_example_dynamic_programming.memo;
 
 import java.util.HashMap;
 

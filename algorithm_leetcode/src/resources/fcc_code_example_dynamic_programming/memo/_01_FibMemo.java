@@ -4,7 +4,7 @@
  * leetcode = https://leetcode.com/problems/fibonacci-number/
  * */
 
-package resources.fcc_code_example_dynamic_programming;
+package resources.fcc_code_example_dynamic_programming.memo;
 
 import java.util.HashMap;
 

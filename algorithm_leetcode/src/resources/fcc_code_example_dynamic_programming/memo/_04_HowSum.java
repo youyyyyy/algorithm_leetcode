@@ -8,7 +8,7 @@
  * - if there is no combination that adds up to the targetSum, then return null
  * */
 
-package resources.fcc_code_example_dynamic_programming;
+package resources.fcc_code_example_dynamic_programming.memo;
 
 import java.util.ArrayList;
 import java.util.HashMap;

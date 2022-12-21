@@ -1,15 +1,15 @@
-package leetcode_hashmap;
+package leetcode_hashmap.find_pairs;
 
+import java.util.Arrays;
 import java.util.HashMap;
 
-/*
-Time complexity: O(N) - traverse nums only once
-Space complexity: O(N) - hashmap can store at most nums.length elements
-*/
+
+// Time complexity: O(N) - traverse nums only once
+// Space complexity: O(N) - hashmap can store at most nums.length elements
+
 
 class Solution0001 {
     public int[] twoSum(int[] nums, int target) {
-
 
         HashMap<Integer, Integer> map = new HashMap<>();
 
@@ -43,13 +43,9 @@ class Solution0001 {
 
 public class _0001_TwoSum {
     public static void main(String[] args) {
-        int[] arr = {3, 3};
-        int target = 6;
         Solution0001 slt = new Solution0001();
-        int[] res = slt.twoSum(arr, target);
-
-        for (int i : res) {
-            System.out.print(i + " ");
-        }
+        System.out.println(Arrays.toString(slt.twoSum(new int[]{2, 7, 11, 15}, 9)));   // [1,0]
+        System.out.println(Arrays.toString(slt.twoSum(new int[]{3, 2, 4}, 6)));  // [2, 1]
+        System.out.println(Arrays.toString(slt.twoSum(new int[]{3, 3}, 6)));  // [1, 0]
     }
 }
