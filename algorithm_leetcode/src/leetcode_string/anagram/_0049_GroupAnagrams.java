@@ -3,10 +3,9 @@ package leetcode_string.anagram;
 import java.util.*;
 
 
-/*
-Time complexity: O(n * klogk)
-Space complexity: O(nk)
-*/
+
+// Time complexity: O(n * klogk)
+// Space complexity: O(nk)
 
 class Solution0049 {
     public List<List<String>> groupAnagrams(String[] strs) {
@@ -78,9 +77,9 @@ class Solution0049 {
 
 public class _0049_GroupAnagrams {
     public static void main(String[] args) {
-        String[] strs = {"eat", "tea", "tan", "ate", "nat", "bat"};
         Solution0049 slt = new Solution0049();
-        List<List<String>> res = slt.groupAnagrams(strs);
-        System.out.println(res);
+        System.out.println(slt.groupAnagrams(new String[]{"eat", "tea", "tan", "ate", "nat", "bat"}));  // [[eat, tea, ate], [bat], [tan, nat]]
+        System.out.println(slt.groupAnagrams(new String[]{""}));  // [[]]
+        System.out.println(slt.groupAnagrams(new String[]{"a"}));  // [[a]]
     }
 }

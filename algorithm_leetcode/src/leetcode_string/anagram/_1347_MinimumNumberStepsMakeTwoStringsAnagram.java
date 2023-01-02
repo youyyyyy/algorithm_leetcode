@@ -1,5 +1,7 @@
 package leetcode_string.anagram;
 
+// Time complexity: O(n)
+// Space complexity: O(1)
 class Solution1347 {
     public int minSteps(String s, String t) {
 

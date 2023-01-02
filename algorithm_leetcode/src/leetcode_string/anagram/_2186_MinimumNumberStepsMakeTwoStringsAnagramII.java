@@ -1,5 +1,6 @@
 package leetcode_string.anagram;
 
+
 class Solution2186 {
     public int minSteps(String s, String t) {
 
@@ -18,11 +19,8 @@ class Solution2186 {
 
 public class _2186_MinimumNumberStepsMakeTwoStringsAnagramII {
     public static void main(String[] args) {
-        String s = "leetcode";
-        String t = "coats";
-
         Solution2186 slt = new Solution2186();
-        int res = slt.minSteps(s, t);
-        System.out.println(res);
+        System.out.println(slt.minSteps("leetcode", "coats"));  // 7
+        System.out.println(slt.minSteps("night", "thing"));  // 0
     }
 }

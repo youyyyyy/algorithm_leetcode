@@ -56,8 +56,7 @@ class Solution2273 {
 public class _2273_FindResultantArrayAfterRemovingAnagrams {
     public static void main(String[] args) {
         Solution2273 slt = new Solution2273();
-        String[] words = {"abba", "baba", "bbaa", "cd", "cd"};
-        List<String> res = slt.removeAnagrams(words);
-        System.out.println(res);
+        System.out.println(slt.removeAnagrams(new String[]{"abba", "baba", "bbaa", "cd", "cd"}));  // [abba, cd]
+        System.out.println(slt.removeAnagrams(new String[]{"a", "b", "c", "d", "e"}));  // [a, b, c, d, e]
     }
 }

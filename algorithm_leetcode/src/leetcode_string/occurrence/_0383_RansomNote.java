@@ -1,4 +1,4 @@
-package leetcode_string;
+package leetcode_string.occurrence;
 
 class Solution0383 {
     public boolean canConstruct(String ransomNote, String magazine) {
@@ -17,9 +17,9 @@ class Solution0383 {
 
 public class _0383_RansomNote {
     public static void main(String[] args) {
-        String ransomNote = "a", magazine = "b";
         Solution0383 slt = new Solution0383();
-        boolean res = slt.canConstruct(ransomNote, magazine);
-        System.out.println(res);
+        System.out.println(slt.canConstruct("a", "b"));  // false
+        System.out.println(slt.canConstruct("aa", "ab"));  // false
+        System.out.println(slt.canConstruct("aa", "aab"));  // true
     }
 }
