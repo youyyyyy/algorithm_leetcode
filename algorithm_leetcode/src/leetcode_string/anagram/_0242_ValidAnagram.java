@@ -1,10 +1,9 @@
 package leetcode_string.anagram;
 
 
-/*
-* Time complexity: O(n)
-* Space complexity: O(1)
-* */
+// Time complexity: O(n)
+// Space complexity: O(1)
+
 class Solution0242 {
     public boolean isAnagram(String s, String t) {
 
@@ -25,10 +24,8 @@ class Solution0242 {
 
 public class _0242_ValidAnagram {
     public static void main(String[] args) {
-        String s = "rat";
-        String t = "car";
         Solution0242 slt = new Solution0242();
-        boolean res = slt.isAnagram(s, t);
-        System.out.println(res);
+        System.out.println(slt.isAnagram("anagram", "nagaram"));  // true
+        System.out.println(slt.isAnagram("rat", "car"));  // false
     }
 }

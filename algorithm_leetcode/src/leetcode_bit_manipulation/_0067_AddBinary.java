@@ -9,16 +9,15 @@ class Solution0067 {
     public String addBinary(String a, String b) {
         StringBuilder sb = new StringBuilder();
         int carry = 0;
-        int len = Math.max(a.length(), b.length());
 
-        for (int i = 0; i < len; i++) {
-            int val1 = i > a.length() - 1 ? 0 : a.charAt(a.length() - 1 - i) - '0';
-            int val2 = i > b.length() - 1 ? 0 : b.charAt(b.length() - 1 - i) - '0';
+        for (int i = a.length() - 1, j = b.length() - 1; i >= 0 || j >= 0; i--, j--) {
+            int val1 = i >= 0 ? a.charAt(i) - '0' : 0;
+            int val2 = j >= 0 ? b.charAt(j) - '0' : 0;
             int sum = val1 + val2 + carry;
             sb.append(sum % 2);
             carry = sum / 2;
         }
-        if (carry == 1) sb.append('1');
+        if (carry == 1) sb.append(1);
 
         return sb.reverse().toString();
     }

@@ -19,8 +19,11 @@ class Solution0007 {
 public class _0007_ReverseInteger {
     public static void main(String[] args) {
         Solution0007 slt = new Solution0007();
-        int n = 1534236469;
-        int res = slt.reverse(n);
-        System.out.println(res);
+        System.out.println(slt.reverse(123));
+        System.out.println(slt.reverse(-123));
+        System.out.println(slt.reverse(120));
+        System.out.println(slt.reverse(1534236469));
+        System.out.println(slt.reverse(Integer.MIN_VALUE));
+        System.out.println(slt.reverse(Integer.MAX_VALUE));
     }
 }

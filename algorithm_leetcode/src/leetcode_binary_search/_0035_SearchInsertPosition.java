@@ -25,11 +25,10 @@ class Solution0035 {
 
 public class _0035_SearchInsertPosition {
     public static void main(String[] args) {
-        int[] arr = {1, 3, 5, 6};
-        int target = 7;
         Solution0035 slt = new Solution0035();
-        int res = slt.searchInsert(arr, target);
-        System.out.println(res);
+        System.out.println(slt.searchInsert(new int[]{1, 3, 5, 6}, 5));  // 2
+        System.out.println(slt.searchInsert(new int[]{1, 3, 5, 6}, 2));  // 1
+        System.out.println(slt.searchInsert(new int[]{1, 3, 5, 6}, 7));  // 4
 
     }
 }
