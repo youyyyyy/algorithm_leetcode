@@ -6,7 +6,7 @@ class Solution0392 {
         int indexS = 0;
         int indexT = 0;
 
-        while (indexS <s.length() && indexT < t.length()) {
+        while (indexS < s.length() && indexT < t.length()) {
             if (s.charAt(indexS) == t.charAt(indexT)) indexS++;
             indexT++;
         }
@@ -17,9 +17,8 @@ class Solution0392 {
 
 public class _0392_IsSubsequence {
     public static void main(String[] args) {
-        String s = "abc", t = "ahbgdc";
         Solution0392 slt = new Solution0392();
-        boolean res = slt.isSubsequence(s, t);
-        System.out.println(res);
+        System.out.println(slt.isSubsequence("abc", "ahbgdc"));  // true
+        System.out.println(slt.isSubsequence("axc", "ahbgdc"));  // false
     }
 }

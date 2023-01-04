@@ -16,28 +16,21 @@ class Solution0438 {
         for (char ch : p.toCharArray()) occurrenceP[ch - 'a']++;
 
         int left = 0, right = 0;
-        while (right < lenS) {
-            int dist = right - left + 1;
+        for (; right < lenS; right++) {
             occurrenceS[s.charAt(right) - 'a']++;
-            if (dist >= lenP) {
-                if (Arrays.equals(occurrenceS, occurrenceP)) res.add(left);
-                occurrenceS[s.charAt(left) - 'a']--;
-                left++;
-            }
-            right++;
+            if (right - left + 1 > lenP) occurrenceS[s.charAt(left++) - 'a']--;
+            if (Arrays.equals(occurrenceS, occurrenceP)) res.add(left);
         }
 
         return res;
-
     }
 }
 
 
 public class _0438_FindAllAnagramsString {
     public static void main(String[] args) {
-        String s = "cbaebabacd", p = "abc";
         Solution0438 slt = new Solution0438();
-        List<Integer> res = slt.findAnagrams(s, p);
-        System.out.println(res);
+        System.out.println(slt.findAnagrams("cbaebabacd", "abc"));  // [0, 6]
+        System.out.println(slt.findAnagrams("abab", "ab"));  // [0, 1, 2]
     }
 }
