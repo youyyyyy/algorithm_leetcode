@@ -19,7 +19,7 @@ class Solution1299 {
 public class _1299_ReplaceElementsGreatestElementRightSide {
     public static void main(String[] args) {
         Solution1299 slt = new Solution1299();
-        System.out.println(Arrays.toString(slt.replaceElements(new int[]{17, 18, 5, 4, 6, 1})));
-        System.out.println(Arrays.toString(slt.replaceElements(new int[]{400})));
+        System.out.println(Arrays.toString(slt.replaceElements(new int[]{17, 18, 5, 4, 6, 1})));  // [18,6,6,6,1,-1]
+        System.out.println(Arrays.toString(slt.replaceElements(new int[]{400})));  // [-1]
     }
 }

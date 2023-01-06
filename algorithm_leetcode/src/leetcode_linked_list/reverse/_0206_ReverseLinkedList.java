@@ -3,10 +3,8 @@ package leetcode_linked_list.reverse;
 import data_structure_class.ListNode;
 
 
-/*
- * Time complexity: O(n)
- * Space complexity: O(1)
- * */
+// Time complexity: O(n)
+// Space complexity: O(1)
 class Solution0206 {
 
     public ListNode reverseList(ListNode head) {
@@ -46,17 +44,10 @@ class Solution0206 {
 
 public class _0206_ReverseLinkedList {
     public static void main(String[] args) {
-        ListNode n1 = new ListNode(8);
-        ListNode n2 = new ListNode(2);
-        ListNode n3 = new ListNode(1);
-
-        n1.setNext(n2);
-        n2.setNext(n3);
-
         Solution0206 slt = new Solution0206();
-        ListNode res = slt.reverseList(n1);
-        printLinkedList(res);
-
+        printLinkedList(slt.reverseList(createListNode(new int[]{1, 2, 3, 4, 5})));  // 5 4 3 2 1
+        printLinkedList(slt.reverseList(createListNode(new int[]{1, 2})));  // 2 1
+        printLinkedList(slt.reverseList(createListNode(new int[]{})));
     }
 
     public static void printLinkedList(ListNode node) {
@@ -65,5 +56,16 @@ public class _0206_ReverseLinkedList {
             System.out.print(temp.val + " ");
             temp = temp.getNext();
         }
+        System.out.println();
+    }
+
+    public static ListNode createListNode(int[] arr) {
+        ListNode pre = new ListNode(-1);
+        ListNode cur = pre;
+        for (int i : arr) {
+            cur.next = new ListNode(i);
+            cur = cur.next;
+        }
+        return pre.next;
     }
 }

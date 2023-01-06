@@ -60,27 +60,10 @@ class Solution0021 {
 public class _0021_MergeTwoSortedLists {
 
     public static void main(String[] args) {
-        ListNode n1 = new ListNode(1);
-        ListNode n2 = new ListNode(8);
-        ListNode n3 = new ListNode(22);
-        ListNode n4 = new ListNode(40);
-
-        ListNode n1_2 = new ListNode(4);
-        ListNode n2_2 = new ListNode(11);
-        ListNode n3_2 = new ListNode(16);
-        ListNode n4_2 = new ListNode(20);
-
-        n1.setNext(n2);
-        n2.setNext(n3);
-        n3.setNext(n4);
-
-        n1_2.setNext(n2_2);
-        n2_2.setNext(n3_2);
-        n3_2.setNext(n4_2);
-
         Solution0021 slt = new Solution0021();
-        ListNode res = slt.mergeTwoLists(n1, n1_2);
-        printLinkedList(res);
+        printLinkedList(slt.mergeTwoLists(createListNode(new int[]{1, 2, 4}), createListNode(new int[]{1, 3, 4})));  // 1 1 2 3 4 4
+        printLinkedList(slt.mergeTwoLists(createListNode(new int[]{}), createListNode(new int[]{})));
+        printLinkedList(slt.mergeTwoLists(createListNode(new int[]{}), createListNode(new int[]{0})));  // 0
     }
 
 
@@ -90,5 +73,16 @@ public class _0021_MergeTwoSortedLists {
             System.out.print(temp.val + " ");
             temp = temp.getNext();
         }
+        System.out.println();
+    }
+
+    public static ListNode createListNode(int[] arr) {
+        ListNode pre = new ListNode(-1);
+        ListNode cur = pre;
+        for (int i : arr) {
+            cur.next = new ListNode(i);
+            cur = cur.next;
+        }
+        return pre.next;
     }
 }

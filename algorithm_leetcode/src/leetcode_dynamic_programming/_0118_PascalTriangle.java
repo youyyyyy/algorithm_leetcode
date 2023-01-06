@@ -6,35 +6,30 @@ import java.util.List;
 
 // Time complexity: O(m^2)
 // Space complexity: O(1)
-class Solution118 {
+class Solution0118 {
     public List<List<Integer>> generate(int numRows) {
         List<List<Integer>> res = new ArrayList<>();
-
         res.add(new ArrayList<>());
         res.get(0).add(1);
-        if (numRows == 1) return res;
 
         for (int i = 1; i < numRows; i++) {
-            List<Integer> temp = new ArrayList<>();
-            temp.add(1);
+            List<Integer> row = new ArrayList<>();
+            row.add(1);
             for (int j = 1; j < i; j++) {
-                temp.add(res.get(i - 1).get((j - 1)) + res.get(i - 1).get(j));
+                row.add(res.get(i - 1).get(j - 1) + res.get(i - 1).get(j));
             }
-            temp.add(1);
-            res.add(temp);
+            row.add(1);
+            res.add(row);
         }
 
         return res;
     }
 }
 
-public class _118_PascalTriangle {
+public class _0118_PascalTriangle {
     public static void main(String[] args) {
-        Solution118 slt = new Solution118();
-        int rowNum = 5;
-
-        List<List<Integer>> res = slt.generate(rowNum);
-        System.out.println(res);
-
+        Solution0118 slt = new Solution0118();
+        System.out.println(slt.generate(5));  // [[1], [1, 1], [1, 2, 1], [1, 3, 3, 1], [1, 4, 6, 4, 1]]
+        System.out.println(slt.generate(1));  // [[1]]
     }
 }

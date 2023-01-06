@@ -3,31 +3,30 @@ package leetcode_linked_list.reverse;
 import data_structure_class.ListNode;
 
 
-/*
- * Time complexity: O(n)
- * Space complexity: O(1)
- * */
+// Time complexity: O(n)
+// Space complexity: O(1)
+
 class Solution0234 {
     public boolean isPalindrome(ListNode head) {
         if (head.next == null) return true;
 
-        boolean res = true;
-
         // 1. find the mid, and reverse the second half
-        ListNode firstHalf = findMiddle(head);
-        ListNode secondHalf = reverse(firstHalf.next);
+        ListNode firstHalfEnd = findMiddle(head);
+        ListNode secondHalfStart = reverse(firstHalfEnd.next);
 
         // 2. compare
-        ListNode cur1 = head;
-        ListNode cur2 = secondHalf;
-        while (cur2 != null) {
-            if (cur1.val != cur2.val) res = false;
-            cur1 = cur1.next;
-            cur2 = cur2.next;
+        boolean res = true;
+        ListNode curFirst = head;
+        ListNode curSecond = secondHalfStart;
+        while (curSecond != null) {
+            if (curFirst.val != curSecond.val) res = false;
+            curFirst = curFirst.next;
+            curSecond = curSecond.next;
         }
 
+
         // 3. restore
-        firstHalf.next = reverse(secondHalf);
+        firstHalfEnd.next = reverse(secondHalfStart);
 
         return res;
     }
@@ -35,22 +34,20 @@ class Solution0234 {
 
     /*
      * return the middle node, middle is defined as:
-     * 1 -> 2 -> 3 return 1
+     * 1 -> 2 -> 3 return 2
      * 1 -> 2 -> 3 -> 4 return 2
      * This is a bit different from https://leetcode.com/problems/middle-of-the-linked-list/
-     * because we'd better restore the second half. We should not modify the input
      * */
     private ListNode findMiddle(ListNode head) {
         ListNode fast = head;
         ListNode slow = head;
-        ListNode prev = null;
-        while (fast != null && fast.next != null) {
+
+        while (fast.next != null && fast.next.next != null) {
             fast = fast.next.next;
-            prev = slow;
             slow = slow.next;
         }
 
-        return prev;
+        return slow;
     }
 
     // reverse a list of nodes, see https://leetcode.com/problems/reverse-linked-list/
@@ -73,7 +70,6 @@ class Solution0234 {
 /*
 Time complexity: O(n)
 Space complexity: O(n)
-
 class Solution0234 {
     public boolean isPalindrome(ListNode head) {
         List<Integer> list = new ArrayList<>();
@@ -97,16 +93,20 @@ class Solution0234 {
 
 public class _0234_PalindromeLinkedList {
     public static void main(String[] args) {
-        ListNode n1 = new ListNode(8);
-        ListNode n2 = new ListNode(2);
-        ListNode n3 = new ListNode(8);
-
-        n1.setNext(n2);
-        n2.setNext(n3);
-
         Solution0234 slt = new Solution0234();
-        boolean res = slt.isPalindrome(n1);
-        System.out.println(res);
+        System.out.println(slt.isPalindrome(createListNode(new int[]{8, 2, 8})));  // true
+        System.out.println(slt.isPalindrome(createListNode(new int[]{1, 2, 2, 1})));  // true
+        System.out.println(slt.isPalindrome(createListNode(new int[]{1, 2})));  // false
 
+    }
+
+    public static ListNode createListNode(int[] arr) {
+        ListNode pre = new ListNode(-1);
+        ListNode cur = pre;
+        for (int i : arr) {
+            cur.next = new ListNode(i);
+            cur = cur.next;
+        }
+        return pre.next;
     }
 }
